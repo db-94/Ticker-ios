@@ -39,7 +39,6 @@ class TickersTableViewController: UITableViewController {
         }
         
         self.navigationItem.title = "Ticker"
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         tableView.dataSource = self
         
