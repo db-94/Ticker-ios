@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Ticker: Codable {
+class Ticker: Codable, Equatable {
+    static func == (lhs: Ticker, rhs: Ticker) -> Bool {
+        return lhs.name == rhs.name && lhs.date == rhs.date
+    }
+    
     var date: Date
     var name: String
     

@@ -28,6 +28,13 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (ticker != nil) {
+            updateUI()
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         titleField.resignFirstResponder()
@@ -35,6 +42,11 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.ticker = Ticker(date: datePicker.date, name: titleField.text!)
+    }
+    
+    private func updateUI() {
+        titleField.text = ticker?.name
+        datePicker.date = (ticker?.date)!
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

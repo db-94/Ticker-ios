@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" cocoaTouchSystemColor="lightTextColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myId" rowHeight="70" id="WC1-bi-MpT" customClass="TickerTableViewCell" customModule="tick" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="myId" rowHeight="70" id="WC1-bi-MpT" customClass="TickerTableViewCell" customModule="tick" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WC1-bi-MpT" id="QBu-ha-V2B">
@@ -72,6 +72,7 @@
                                     <outlet property="date" destination="ecX-tm-h8s" id="R1J-GN-AIH"/>
                                     <outlet property="label" destination="yVK-mN-rVH" id="c2k-al-wwF"/>
                                     <outlet property="timeTill" destination="hSf-lO-sxV" id="mF2-6r-az9"/>
+                                    <segue destination="378-O1-VWo" kind="show" identifier="edit" id="frY-57-lic"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -84,7 +85,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jCV-uC-aaZ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="378-O1-VWo" kind="show" id="hor-wA-3Ua"/>
+                                <segue destination="378-O1-VWo" kind="show" identifier="new" id="hor-wA-3Ua"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -175,4 +176,7 @@
             <point key="canvasLocation" x="-159.19999999999999" y="-40.64039408866995"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="frY-57-lic"/>
+    </inferredMetricsTieBreakers>
 </document>

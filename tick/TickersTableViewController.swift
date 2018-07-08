@@ -12,6 +12,7 @@ class TickersTableViewController: UITableViewController {
     private var tickers = [Ticker]()
     private var timer: Timer?
     private var intervalSeconds: Double?
+    private var selectedTicker: Ticker?
     
     // MARK: - View Controller Lifecycle
 
@@ -41,6 +42,7 @@ class TickersTableViewController: UITableViewController {
         self.navigationItem.title = "Ticker"
         
         tableView.dataSource = self
+        tableView.delegate = self
         
         self.intervalSeconds = 20.0
         setTimer()
@@ -63,9 +65,23 @@ class TickersTableViewController: UITableViewController {
     
     @IBAction func unwwindFromNew(_ sender: UIStoryboardSegue) {
         if let senderVC = sender.source as? TickerViewController {
-            tickers.append(senderVC.ticker!)
+            if selectedTicker == nil {
+                tickers.append(senderVC.ticker!)
+            } else {
+                if let index = tickers.index(of: selectedTicker!) {
+                    tickers[index] = senderVC.ticker!
+                    selectedTicker = nil
+                }
+            }
+            
             self.tableView.reloadData()
             save()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dvc = segue.destination as? TickerViewController {
+            dvc.ticker = selectedTicker
         }
     }
 
@@ -73,6 +89,10 @@ class TickersTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,10 +117,25 @@ class TickersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             self.tickers.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            save()
+            self.save()
         }
+        
+        let share = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
+            self.selectedTicker = self.tickers[indexPath.row]
+            self.performSegue(withIdentifier: "edit", sender: self)
+        }
+        
+        share.backgroundColor = UIColor.blue
+        
+        return [delete, share]
     }
 
     /*
