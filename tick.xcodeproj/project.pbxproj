@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB6F9CDC20F2F53A00B4ECF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DB80133C20DDDA290019AB60 /* TickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerViewController.swift; sourceTree = "<group>"; };
 		DB827C1F20CB51930034863F /* tick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB827C2220CB51940034863F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		DB827C1620CB51930034863F = {
 			isa = PBXGroup;
 			children = (
+				DB6F9CDC20F2F53A00B4ECF3 /* README.md */,
 				DB827C2120CB51930034863F /* tick */,
 				DB8E008020E9A00100937ABB /* tickTests */,
 				DB827C2020CB51930034863F /* Products */,
@@ -159,6 +161,11 @@
 					DB827C1E20CB51930034863F = {
 						CreatedOnToolsVersion = 9.3.1;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					DB8E007E20E9A00100937ABB = {
 						CreatedOnToolsVersion = 9.4.1;

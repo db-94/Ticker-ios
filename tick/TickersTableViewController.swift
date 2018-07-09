@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import UserNotifications
 
 class TickersTableViewController: UITableViewController {
-    private var tickers = [Ticker]()
+    private var tickers = [Ticker]() {
+        didSet {
+            setupNotifications()
+        }
+    }
     private var timer: Timer?
     private var intervalSeconds: Double?
     private var selectedTicker: Ticker?
@@ -48,6 +53,34 @@ class TickersTableViewController: UITableViewController {
         setTimer()
     }
     
+    func setupNotifications() {
+        //Scheduling the Notification
+        let center = UNUserNotificationCenter.current()
+        
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+        
+        for ticker in tickers {
+            let content = UNMutableNotificationContent()
+            content.title = ticker.name
+            content.body = "It is time!"
+            content.sound = UNNotificationSound.default()
+            
+            let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: ticker.date)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            
+            let request = UNNotificationRequest(identifier: "REMINDER", content: content, trigger: trigger)
+            
+            center.add(request) { (error) in
+                if let error = error
+                {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         timer?.invalidate()
@@ -56,6 +89,7 @@ class TickersTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        selectedTicker = nil
         if (timer?.isValid)! == false {
             setTimer()
         }

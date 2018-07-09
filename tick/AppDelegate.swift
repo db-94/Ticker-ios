@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             [NSAttributedStringKey.strokeColor: UIColor.white,
              NSAttributedStringKey.strikethroughColor: UIColor.white,
              NSAttributedStringKey.foregroundColor: UIColor.white]
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.badge, .sound, .alert]) { (granted, error) in
+            //granted = yes, if app is authorized for all of the requested interaction types
+            //granted = no, if one or more interaction type is disallowed
+        }
+        
         // Override point for customization after application launch.
         return true
     }
