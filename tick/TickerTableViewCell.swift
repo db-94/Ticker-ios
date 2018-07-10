@@ -35,7 +35,7 @@ class TickerTableViewCell: UITableViewCell {
         if ticker != nil {
             label.text = ticker?.name
             timeTill.text = ticker?.timeTill
-            date.text = ticker?.dateString
+            date.text = ticker?.dateTimeString
         }
     }
 }

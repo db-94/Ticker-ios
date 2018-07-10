@@ -18,7 +18,21 @@ class Ticker: Codable, Equatable {
     
     static let dateFormatter : DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "MMM d yyyy"
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter
+    }()
+    
+    static let timeFormatter : DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mmaa"
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter
+    }()
+    
+    static let dateTimeFormatter : DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d yyyy hh:mmaaa"
         dateFormatter.timeZone = TimeZone.current
         return dateFormatter
     }()
@@ -39,6 +53,14 @@ class Ticker: Codable, Equatable {
     
     var dateString: String {
         return Ticker.dateFormatter.string(from: date)
+    }
+    
+    var timeString: String {
+        return Ticker.timeFormatter.string(from: date)
+    }
+    
+    var dateTimeString: String {
+        return Ticker.dateTimeFormatter.string(from: date)
     }
     
     init?(json: Data) {

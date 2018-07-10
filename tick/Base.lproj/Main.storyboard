@@ -47,7 +47,7 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecX-tm-h8s">
                                                             <rect key="frame" x="175.66666666666663" y="0.0" width="167.33333333333337" height="14.666666666666666"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -102,13 +102,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZw-tR-GQM">
-                                <rect key="frame" x="171" y="105" width="33.333333333333343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NYM-st-fik">
+                            <datePicker hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NYM-st-fik">
                                 <rect key="frame" x="0.0" y="616" width="375" height="162"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,21 +110,61 @@
                                     <!--2018-06-23 04:13:48 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DVP-cR-QEj">
-                                <rect key="frame" x="0.0" y="143" width="375" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <datePicker hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Oi-mH-UBF">
+                                <rect key="frame" x="0.0" y="562" width="375" height="216"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <date key="date" timeIntervalSinceReferenceDate="551420028.40235996">
+                                    <!--2018-06-23 04:13:48 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DVP-cR-QEj">
+                                <rect key="frame" x="0.33333333333334281" y="104" width="375" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="nickname"/>
+                                <connections>
+                                    <action selector="clearIfName:" destination="378-O1-VWo" eventType="editingDidBegin" id="uY3-2b-0tJ"/>
+                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfO-V2-vvt">
+                                <rect key="frame" x="0.0" y="158" width="375" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Date">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadDatePicker:" destination="378-O1-VWo" eventType="touchUpInside" id="aIx-gb-ZbZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFZ-dD-G8U">
+                                <rect key="frame" x="0.0" y="224" width="375" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Time">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadTimePicker:" destination="378-O1-VWo" eventType="touchUpInside" id="ZiM-gS-9vp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TZw-tR-GQM" firstAttribute="top" secondItem="x5O-LQ-Fhq" secondAttribute="top" constant="17" id="7EN-oz-TNd"/>
-                            <constraint firstItem="DVP-cR-QEj" firstAttribute="top" secondItem="TZw-tR-GQM" secondAttribute="bottom" constant="17" id="BPu-2h-dsg"/>
-                            <constraint firstItem="TZw-tR-GQM" firstAttribute="centerX" secondItem="x5O-LQ-Fhq" secondAttribute="centerX" id="BqU-cj-Lh5"/>
+                            <constraint firstItem="x5O-LQ-Fhq" firstAttribute="trailing" secondItem="eFZ-dD-G8U" secondAttribute="trailing" id="1LO-kA-4Ub"/>
+                            <constraint firstItem="eFZ-dD-G8U" firstAttribute="top" secondItem="cfO-V2-vvt" secondAttribute="bottom" constant="30" id="51a-lF-6yX"/>
+                            <constraint firstItem="1Oi-mH-UBF" firstAttribute="trailing" secondItem="x5O-LQ-Fhq" secondAttribute="trailing" id="AG2-Eb-fha"/>
+                            <constraint firstItem="x5O-LQ-Fhq" firstAttribute="trailing" secondItem="cfO-V2-vvt" secondAttribute="trailing" id="BKd-MN-WPY"/>
                             <constraint firstItem="NYM-st-fik" firstAttribute="centerX" secondItem="x5O-LQ-Fhq" secondAttribute="centerX" id="Fq2-Bq-cnE"/>
+                            <constraint firstItem="eFZ-dD-G8U" firstAttribute="width" secondItem="cfO-V2-vvt" secondAttribute="width" id="HmR-Vx-2F2"/>
                             <constraint firstItem="x5O-LQ-Fhq" firstAttribute="bottom" secondItem="NYM-st-fik" secondAttribute="bottom" id="NKy-zF-xg2"/>
+                            <constraint firstItem="x5O-LQ-Fhq" firstAttribute="leading" secondItem="cfO-V2-vvt" secondAttribute="leading" id="Uty-ZB-dSO"/>
+                            <constraint firstItem="DVP-cR-QEj" firstAttribute="top" secondItem="x5O-LQ-Fhq" secondAttribute="top" constant="16" id="YYx-0s-v6Y"/>
+                            <constraint firstItem="cfO-V2-vvt" firstAttribute="top" secondItem="DVP-cR-QEj" secondAttribute="bottom" constant="30" id="ZNl-Z4-yTd"/>
+                            <constraint firstItem="1Oi-mH-UBF" firstAttribute="bottom" secondItem="x5O-LQ-Fhq" secondAttribute="bottom" id="bHk-vk-z41"/>
+                            <constraint firstItem="eFZ-dD-G8U" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="eQN-rB-9KZ"/>
                             <constraint firstItem="DVP-cR-QEj" firstAttribute="centerX" secondItem="x5O-LQ-Fhq" secondAttribute="centerX" id="jcg-Uy-fga"/>
+                            <constraint firstItem="1Oi-mH-UBF" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="kTI-hV-Uk0"/>
                             <constraint firstItem="NYM-st-fik" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="mKx-2u-yQF"/>
                             <constraint firstItem="x5O-LQ-Fhq" firstAttribute="trailing" secondItem="NYM-st-fik" secondAttribute="trailing" id="nwa-fc-n3q"/>
                             <constraint firstItem="DVP-cR-QEj" firstAttribute="width" secondItem="NYM-st-fik" secondAttribute="width" id="vxY-xi-a4C"/>
@@ -148,7 +182,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateField" destination="cfO-V2-vvt" id="D63-D9-GNZ"/>
                         <outlet property="datePicker" destination="NYM-st-fik" id="S2g-k0-UXC"/>
+                        <outlet property="timeField" destination="eFZ-dD-G8U" id="rWv-J4-XhW"/>
+                        <outlet property="timePicker" destination="1Oi-mH-UBF" id="oTA-Jl-pP0"/>
                         <outlet property="titleField" destination="DVP-cR-QEj" id="ZbE-LW-F6k"/>
                     </connections>
                 </viewController>
