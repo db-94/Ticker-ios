@@ -17,24 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navigationBarAppearace = UINavigationBar.appearance()
-        
+
         UIApplication.shared.statusBarStyle = .lightContent
-        
+
         navigationBarAppearace.tintColor = .white
         navigationBarAppearace.barTintColor = .black
         navigationBarAppearace.isOpaque = false
         navigationBarAppearace.isTranslucent = false
         navigationBarAppearace.titleTextAttributes =
             [NSAttributedStringKey.strokeColor: UIColor.white,
-             NSAttributedStringKey.strikethroughColor: UIColor.white,
-             NSAttributedStringKey.foregroundColor: UIColor.white]
-        
+                NSAttributedStringKey.strikethroughColor: UIColor.white,
+                NSAttributedStringKey.foregroundColor: UIColor.white]
+
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.badge, .sound, .alert]) { (granted, error) in
+        center.requestAuthorization(options: [.badge, .sound, .alert]) { (_, _) in
             //granted = yes, if app is authorized for all of the requested interaction types
             //granted = no, if one or more interaction type is disallowed
         }
-        
+
         // Override point for customization after application launch.
         return true
     }
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        
+
         for window in application.windows {
             window.rootViewController?.beginAppearanceTransition(false, animated: false)
             window.rootViewController?.endAppearanceTransition()
@@ -70,6 +70,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-
 }
-

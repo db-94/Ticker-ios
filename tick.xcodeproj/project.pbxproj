@@ -15,6 +15,7 @@
 		DB827C3520CF47140034863F /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB827C3420CF47140034863F /* Ticker.swift */; };
 		DB8E008220E9A00100937ABB /* tickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E008120E9A00100937ABB /* tickTests.swift */; };
 		DB8E008A20E9AED200937ABB /* testTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E008920E9AED200937ABB /* testTicker.swift */; };
+		DBCC02272131D2C800BA8425 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBCC02262131D2C800BA8425 /* .swiftlint.yml */; };
 		DBDE649520CF51770066A4B8 /* TickersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE649420CF51770066A4B8 /* TickersTableViewController.swift */; };
 		DBDE649720D893ED0066A4B8 /* TickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE649620D893ED0066A4B8 /* TickerTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		DB8E008120E9A00100937ABB /* tickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tickTests.swift; sourceTree = "<group>"; };
 		DB8E008320E9A00100937ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8E008920E9AED200937ABB /* testTicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTicker.swift; sourceTree = "<group>"; };
+		DBCC02262131D2C800BA8425 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DBDE649420CF51770066A4B8 /* TickersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersTableViewController.swift; sourceTree = "<group>"; };
 		DBDE649620D893ED0066A4B8 /* TickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +70,7 @@
 		DB827C1620CB51930034863F = {
 			isa = PBXGroup;
 			children = (
+				DBCC02262131D2C800BA8425 /* .swiftlint.yml */,
 				DB6F9CDC20F2F53A00B4ECF3 /* README.md */,
 				DB827C2120CB51930034863F /* tick */,
 				DB8E008020E9A00100937ABB /* tickTests */,
@@ -120,6 +123,7 @@
 				DB827C1B20CB51930034863F /* Sources */,
 				DB827C1C20CB51930034863F /* Frameworks */,
 				DB827C1D20CB51930034863F /* Resources */,
+				DBCC02252131D18B00BA8425 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -197,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCC02272131D2C800BA8425 /* .swiftlint.yml in Resources */,
 				DB827C2D20CB51970034863F /* LaunchScreen.storyboard in Resources */,
 				DB827C2A20CB51970034863F /* Assets.xcassets in Resources */,
 				DB827C2820CB51940034863F /* Main.storyboard in Resources */,
@@ -211,6 +216,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DBCC02252131D18B00BA8425 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB827C1B20CB51930034863F /* Sources */ = {

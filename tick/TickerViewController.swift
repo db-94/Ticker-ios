@@ -13,9 +13,9 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timePicker: UIDatePicker!
     var ticker: Ticker?
-    
+
     @IBAction func clearIfName(_ sender: Any) {
-        if (titleField.text == "Name") {
+        if titleField.text == "Name" {
             titleField.text = ""
         }
     }
@@ -25,21 +25,21 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         titleField.resignFirstResponder()
         timePicker.isHidden = true
         datePicker.isHidden = false
-        
+
         datePickerChanged(sender: datePicker)
-        
+
         datePicker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
     }
-    
+
     @IBAction func loadTimePicker(_ sender: Any) {
         datePicker.isHidden = true
         timePicker.isHidden = false
-        
+
         datePickerChanged(sender: timePicker)
-        
+
         timePicker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
     }
-    
+
     @objc func datePickerChanged(sender: UIDatePicker) {
         switch sender.datePickerMode {
         case .date:
@@ -50,30 +50,30 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
             print("wrong type")
         }
     }
-    
+
     func updateDateField(date: Date) {
         UIView.performWithoutAnimation {
             dateField.setTitle(Ticker.dateFormatter.string(from: date), for: .normal)
             dateField.layoutIfNeeded()
         }
     }
-    
+
     func updateTimeField(date: Date) {
         UIView.performWithoutAnimation {
             timeField.setTitle(Ticker.timeFormatter.string(from: date), for: .normal)
             timeField.layoutIfNeeded()
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         titleField.delegate = self
-        
+
         datePicker.setValue(UIColor.white, forKey: "textColor")
         datePicker.setValue(false, forKeyPath: "highlightsToday")
         datePicker.datePickerMode = .date
-        
+
         timePicker.setValue(UIColor.white, forKey: "textColor")
         timePicker.setValue(false, forKeyPath: "highlightsToday")
         timePicker.datePickerMode = .time
@@ -85,59 +85,59 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if (ticker != nil) {
+
+        if ticker != nil {
             updateUI()
         }
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+
         let border = CALayer()
         let width = CGFloat(2.0)
         border.borderColor = UIColor.darkGray.cgColor
         let field = titleField!
         border.frame = CGRect(x: 0, y: field.frame.size.height - width, width: field.frame.size.width, height: field.frame.size.height)
-        
+
         border.borderWidth = width
-        
+
         field.layer.addSublayer(border)
         field.layer.masksToBounds = true
-        
+
         [dateField, timeField].forEach { fields in
             let border = CALayer()
             let width = CGFloat(2.0)
             border.borderColor = UIColor.darkGray.cgColor
             let field = fields!
             border.frame = CGRect(x: 0, y: field.frame.size.height - width, width: field.frame.size.width, height: field.frame.size.height)
-            
+
             border.borderWidth = width
-            
+
             field.layer.addSublayer(border)
             field.layer.masksToBounds = true
         }
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         titleField.resignFirstResponder()
         datePicker.isHidden = true
         timePicker.isHidden = true
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: timePicker.date)
         var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: datePicker.date)
-        
+
         dateComponents.hour = timeComponents.hour
         dateComponents.minute = timeComponents.minute
-        
+
         self.ticker = Ticker(date: Calendar.current.date(from: dateComponents)!, name: titleField.text!)
     }
-    
+
     private func updateUI() {
         titleField.text = ticker?.name
         updateDateField(date: (ticker?.date)!)
@@ -145,7 +145,7 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         datePicker.date = (ticker?.date)!
         timePicker.date = (ticker?.date)!
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false

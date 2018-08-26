@@ -12,57 +12,57 @@ class Ticker: Codable, Equatable {
     static func == (lhs: Ticker, rhs: Ticker) -> Bool {
         return lhs.name == rhs.name && lhs.date == rhs.date
     }
-    
+
     var date: Date
     var name: String
-    
-    static let dateFormatter : DateFormatter = {
+
+    static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d yyyy"
         dateFormatter.timeZone = TimeZone.current
         return dateFormatter
     }()
-    
-    static let timeFormatter : DateFormatter = {
+
+    static let timeFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mmaa"
         dateFormatter.timeZone = TimeZone.current
         return dateFormatter
     }()
-    
-    static let dateTimeFormatter : DateFormatter = {
+
+    static let dateTimeFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d yyyy hh:mmaaa"
         dateFormatter.timeZone = TimeZone.current
         return dateFormatter
     }()
-    
+
     var timeTill: String {
         let now = Date()
         return date.offset(from: now, withString: "until")
     }
-    
+
     init(date: Date, name: String) {
         self.date = date
         self.name = name
     }
-    
+
     var json: Data? {
         return try? JSONEncoder().encode(self)
     }
-    
+
     var dateString: String {
         return Ticker.dateFormatter.string(from: date)
     }
-    
+
     var timeString: String {
         return Ticker.timeFormatter.string(from: date)
     }
-    
+
     var dateTimeString: String {
         return Ticker.dateTimeFormatter.string(from: date)
     }
-    
+
     init?(json: Data) {
         if let newValue = try? JSONDecoder().decode(Ticker.self, from: json) {
             self.date = newValue.date
@@ -108,12 +108,12 @@ extension Date {
     }
     /// Returns the a custom time interval description from another date
     func offset(from date: Date, withString: String) -> String {
-        if seconds(from: date) < 0 { return date.offset(from: self, withString: "since")   }
-        if days(from: date)    > 0 {
+        if seconds(from: date) < 0 { return date.offset(from: self, withString: "since") }
+        if days(from: date) > 0 {
             let tempDays = days(from: date)
             return tempDays > 1 ? "\(days(from: date)) days \(withString)" : "\(days(from: date)) day \(withString)"
         }
-        if hours(from: date)   > 0 {
+        if hours(from: date) > 0 {
             let tempHours = hours(from: date)
             return tempHours > 1 ? "\(tempHours) hours \(withString)" : "\(tempHours) hour \(withString)"
         }

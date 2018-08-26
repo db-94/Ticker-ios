@@ -13,11 +13,5 @@ class TickersViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        dateFormatter.timeZone = TimeZone.current
-//        let tick = Ticker(date: dateFormatter.date(from: "2017-03-23")!)
-        
     }
 }
-

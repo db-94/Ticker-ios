@@ -18,7 +18,7 @@ class TickersTableViewController: UITableViewController {
     private var timer: Timer?
     private var intervalSeconds: Double?
     private var selectedTicker: Ticker?
-    
+
     // MARK: - View Controller Lifecycle
 
     /**
@@ -30,7 +30,7 @@ class TickersTableViewController: UITableViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if let url = try? FileManager.default.url(
             for: .applicationSupportDirectory,
             in: .userDomainMask,
@@ -43,50 +43,49 @@ class TickersTableViewController: UITableViewController {
                 }
             }
         }
-        
+
         self.navigationItem.title = "Ticker"
-        
+
         tableView.dataSource = self
         tableView.delegate = self
-        
+
         self.intervalSeconds = 20.0
         setTimer()
     }
-    
+
     func setupNotifications() {
         //Scheduling the Notification
         let center = UNUserNotificationCenter.current()
-        
+
         center.removeAllDeliveredNotifications()
         center.removeAllPendingNotificationRequests()
-        
+
         for ticker in tickers {
             let content = UNMutableNotificationContent()
             content.title = ticker.name
             content.body = "It is time!"
             content.sound = UNNotificationSound.default()
-            
+
             let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: ticker.date)
-            
+
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-            
+
             let request = UNNotificationRequest(identifier: "REMINDER", content: content, trigger: trigger)
-            
+
             center.add(request) { (error) in
-                if let error = error
-                {
+                if let error = error {
                     print(error.localizedDescription)
                 }
             }
         }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         timer?.invalidate()
         save()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         selectedTicker = nil
@@ -94,9 +93,9 @@ class TickersTableViewController: UITableViewController {
             setTimer()
         }
     }
-    
+
     // MARK: - Segues
-    
+
     @IBAction func unwwindFromNew(_ sender: UIStoryboardSegue) {
         if let senderVC = sender.source as? TickerViewController {
             if selectedTicker == nil {
@@ -107,12 +106,12 @@ class TickersTableViewController: UITableViewController {
                     selectedTicker = nil
                 }
             }
-            
+
             self.tableView.reloadData()
             save()
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dvc = segue.destination as? TickerViewController {
             dvc.ticker = selectedTicker
@@ -124,7 +123,7 @@ class TickersTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
     }
@@ -137,60 +136,60 @@ class TickersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myId", for: indexPath)
         if let tickerCell = cell as? TickerTableViewCell {
             tickerCell.ticker = tickers[indexPath.row]
-            
+
             if (tickerCell.ticker?.date.seconds(from: Date()))! < 60, (tickerCell.ticker?.date.seconds(from: Date()))! > -60 {
                 intervalSeconds = 1.0
                 setTimer()
             }
-            
+
             return tickerCell
         }
 
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
+
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
             self.tickers.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             self.save()
         }
-        
-        let share = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
+
+        let share = UITableViewRowAction(style: .default, title: "Edit") { (_, indexPath) in
             self.selectedTicker = self.tickers[indexPath.row]
             self.performSegue(withIdentifier: "edit", sender: self)
         }
-        
+
         share.backgroundColor = UIColor.blue
-        
+
         return [delete, share]
     }
 
     /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-    }
-    */
+     }
+     */
 
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-    
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+
     // MARK: - Helper Functions
     private func setTimer() {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: intervalSeconds!, repeats: true) { [weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: intervalSeconds!, repeats: true) { [weak self] _ in
             let currentIntervals = self?.intervalSeconds
             self?.intervalSeconds = 20.0
             self?.tableView.visibleCells.forEach { [weak self] cell in
@@ -201,12 +200,12 @@ class TickersTableViewController: UITableViewController {
                     tickerCell.updateUI()
                 }
             }
-            if (currentIntervals != self?.intervalSeconds) {
+            if currentIntervals != self?.intervalSeconds {
                 self?.setTimer()
             }
         }
     }
-    
+
     private func save() {
         let jsonData = try? JSONEncoder().encode(tickers)
         if let url = try? FileManager.default.url(

@@ -12,13 +12,13 @@ class TickerTableViewCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var timeTill: UILabel!
     @IBOutlet weak var date: UILabel!
-    
+
     public var ticker: Ticker? {
         didSet {
             updateUI()
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,11 +27,11 @@ class TickerTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         self.contentView.bounds = self.bounds
-        updateUI();
+        updateUI()
         // Configure the view for the selected state
     }
 
-    public func updateUI(){
+    public func updateUI() {
         if ticker != nil {
             label.text = ticker?.name
             timeTill.text = ticker?.timeTill
