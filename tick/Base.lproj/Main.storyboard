@@ -148,12 +148,6 @@
                                     <action selector="loadTimePicker:" destination="378-O1-VWo" eventType="touchUpInside" id="ZiM-gS-9vp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZL5-eG-205">
-                                <rect key="frame" x="0.0" y="290" width="375" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -161,21 +155,18 @@
                             <constraint firstItem="eFZ-dD-G8U" firstAttribute="top" secondItem="cfO-V2-vvt" secondAttribute="bottom" constant="30" id="51a-lF-6yX"/>
                             <constraint firstItem="1Oi-mH-UBF" firstAttribute="trailing" secondItem="x5O-LQ-Fhq" secondAttribute="trailing" id="AG2-Eb-fha"/>
                             <constraint firstItem="x5O-LQ-Fhq" firstAttribute="trailing" secondItem="cfO-V2-vvt" secondAttribute="trailing" id="BKd-MN-WPY"/>
-                            <constraint firstItem="ZL5-eG-205" firstAttribute="top" secondItem="eFZ-dD-G8U" secondAttribute="bottom" constant="30" id="DNQ-n1-ezH"/>
                             <constraint firstItem="NYM-st-fik" firstAttribute="centerX" secondItem="x5O-LQ-Fhq" secondAttribute="centerX" id="Fq2-Bq-cnE"/>
                             <constraint firstItem="eFZ-dD-G8U" firstAttribute="width" secondItem="cfO-V2-vvt" secondAttribute="width" id="HmR-Vx-2F2"/>
                             <constraint firstItem="x5O-LQ-Fhq" firstAttribute="bottom" secondItem="NYM-st-fik" secondAttribute="bottom" id="NKy-zF-xg2"/>
                             <constraint firstItem="x5O-LQ-Fhq" firstAttribute="leading" secondItem="cfO-V2-vvt" secondAttribute="leading" id="Uty-ZB-dSO"/>
                             <constraint firstItem="DVP-cR-QEj" firstAttribute="top" secondItem="x5O-LQ-Fhq" secondAttribute="top" constant="16" id="YYx-0s-v6Y"/>
                             <constraint firstItem="cfO-V2-vvt" firstAttribute="top" secondItem="DVP-cR-QEj" secondAttribute="bottom" constant="30" id="ZNl-Z4-yTd"/>
-                            <constraint firstItem="ZL5-eG-205" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="b3V-LJ-Bv3"/>
                             <constraint firstItem="1Oi-mH-UBF" firstAttribute="bottom" secondItem="x5O-LQ-Fhq" secondAttribute="bottom" id="bHk-vk-z41"/>
                             <constraint firstItem="eFZ-dD-G8U" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="eQN-rB-9KZ"/>
                             <constraint firstItem="DVP-cR-QEj" firstAttribute="centerX" secondItem="x5O-LQ-Fhq" secondAttribute="centerX" id="jcg-Uy-fga"/>
                             <constraint firstItem="1Oi-mH-UBF" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="kTI-hV-Uk0"/>
                             <constraint firstItem="NYM-st-fik" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="mKx-2u-yQF"/>
                             <constraint firstItem="x5O-LQ-Fhq" firstAttribute="trailing" secondItem="NYM-st-fik" secondAttribute="trailing" id="nwa-fc-n3q"/>
-                            <constraint firstItem="ZL5-eG-205" firstAttribute="width" secondItem="eFZ-dD-G8U" secondAttribute="width" id="oBf-CC-MQi"/>
                             <constraint firstItem="DVP-cR-QEj" firstAttribute="width" secondItem="NYM-st-fik" secondAttribute="width" id="vxY-xi-a4C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x5O-LQ-Fhq"/>
