@@ -148,6 +148,49 @@
                                     <action selector="loadTimePicker:" destination="378-O1-VWo" eventType="touchUpInside" id="ZiM-gS-9vp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZL5-eG-205">
+                                <rect key="frame" x="0.0" y="290" width="375" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="hca-Ra-kly">
+                                <rect key="frame" x="16" y="319" width="343" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ER9-1V-5IN">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <color key="backgroundColor" red="0.0" green="0.98835509361694207" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elJ-iY-2zC">
+                                        <rect key="frame" x="89.333333333333329" y="0.0" width="74.999999999999986" height="75"/>
+                                        <color key="backgroundColor" red="0.0" green="0.98835509359999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="3e3-wi-Ppt"/>
+                                            <constraint firstAttribute="height" constant="75" id="TQA-gG-Qhe"/>
+                                        </constraints>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVa-np-bTq">
+                                        <rect key="frame" x="178.66666666666666" y="0.0" width="75" height="75"/>
+                                        <color key="backgroundColor" red="0.0" green="0.98835509359999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU4-iZ-gzn">
+                                        <rect key="frame" x="268" y="0.0" width="75" height="75"/>
+                                        <color key="backgroundColor" red="0.0" green="0.98835509359999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="elJ-iY-2zC" firstAttribute="height" secondItem="pVa-np-bTq" secondAttribute="height" id="361-Lr-nQh"/>
+                                    <constraint firstItem="aU4-iZ-gzn" firstAttribute="width" secondItem="elJ-iY-2zC" secondAttribute="width" id="ACi-wa-e0i"/>
+                                    <constraint firstItem="elJ-iY-2zC" firstAttribute="width" secondItem="pVa-np-bTq" secondAttribute="width" id="HFX-y3-EFa"/>
+                                    <constraint firstItem="ER9-1V-5IN" firstAttribute="height" secondItem="elJ-iY-2zC" secondAttribute="height" id="QiH-kj-aRe"/>
+                                    <constraint firstItem="ER9-1V-5IN" firstAttribute="width" secondItem="elJ-iY-2zC" secondAttribute="width" id="lKV-Ax-6o3"/>
+                                    <constraint firstItem="aU4-iZ-gzn" firstAttribute="height" secondItem="elJ-iY-2zC" secondAttribute="height" id="nNe-OP-oQr"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -158,15 +201,19 @@
                             <constraint firstItem="NYM-st-fik" firstAttribute="centerX" secondItem="x5O-LQ-Fhq" secondAttribute="centerX" id="Fq2-Bq-cnE"/>
                             <constraint firstItem="eFZ-dD-G8U" firstAttribute="width" secondItem="cfO-V2-vvt" secondAttribute="width" id="HmR-Vx-2F2"/>
                             <constraint firstItem="x5O-LQ-Fhq" firstAttribute="bottom" secondItem="NYM-st-fik" secondAttribute="bottom" id="NKy-zF-xg2"/>
+                            <constraint firstItem="x5O-LQ-Fhq" firstAttribute="trailing" secondItem="hca-Ra-kly" secondAttribute="trailing" constant="16" id="OHN-Pf-fs3"/>
                             <constraint firstItem="x5O-LQ-Fhq" firstAttribute="leading" secondItem="cfO-V2-vvt" secondAttribute="leading" id="Uty-ZB-dSO"/>
                             <constraint firstItem="DVP-cR-QEj" firstAttribute="top" secondItem="x5O-LQ-Fhq" secondAttribute="top" constant="16" id="YYx-0s-v6Y"/>
                             <constraint firstItem="cfO-V2-vvt" firstAttribute="top" secondItem="DVP-cR-QEj" secondAttribute="bottom" constant="30" id="ZNl-Z4-yTd"/>
                             <constraint firstItem="1Oi-mH-UBF" firstAttribute="bottom" secondItem="x5O-LQ-Fhq" secondAttribute="bottom" id="bHk-vk-z41"/>
                             <constraint firstItem="eFZ-dD-G8U" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="eQN-rB-9KZ"/>
                             <constraint firstItem="DVP-cR-QEj" firstAttribute="centerX" secondItem="x5O-LQ-Fhq" secondAttribute="centerX" id="jcg-Uy-fga"/>
+                            <constraint firstItem="hca-Ra-kly" firstAttribute="top" secondItem="ZL5-eG-205" secondAttribute="bottom" constant="8.6666666666666856" id="kRc-g7-aas"/>
                             <constraint firstItem="1Oi-mH-UBF" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="kTI-hV-Uk0"/>
                             <constraint firstItem="NYM-st-fik" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" id="mKx-2u-yQF"/>
                             <constraint firstItem="x5O-LQ-Fhq" firstAttribute="trailing" secondItem="NYM-st-fik" secondAttribute="trailing" id="nwa-fc-n3q"/>
+                            <constraint firstItem="ZL5-eG-205" firstAttribute="width" secondItem="eFZ-dD-G8U" secondAttribute="width" id="oBf-CC-MQi"/>
+                            <constraint firstItem="hca-Ra-kly" firstAttribute="leading" secondItem="x5O-LQ-Fhq" secondAttribute="leading" constant="16" id="qVb-0o-zjg"/>
                             <constraint firstItem="DVP-cR-QEj" firstAttribute="width" secondItem="NYM-st-fik" secondAttribute="width" id="vxY-xi-a4C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x5O-LQ-Fhq"/>
