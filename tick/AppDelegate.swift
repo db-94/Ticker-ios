@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var tickers: [Ticker]?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let navigationBarAppearace = UINavigationBar.appearance()
 
         UIApplication.shared.statusBarStyle = .lightContent
@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.isOpaque = false
         navigationBarAppearace.isTranslucent = false
         navigationBarAppearace.titleTextAttributes =
-            [NSAttributedStringKey.strokeColor: UIColor.white,
-                NSAttributedStringKey.strikethroughColor: UIColor.white,
-                NSAttributedStringKey.foregroundColor: UIColor.white]
+            [NSAttributedString.Key.strokeColor: UIColor.white,
+                NSAttributedString.Key.strikethroughColor: UIColor.white,
+                NSAttributedString.Key.foregroundColor: UIColor.white]
 
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.badge, .sound, .alert]) { (_, _) in
