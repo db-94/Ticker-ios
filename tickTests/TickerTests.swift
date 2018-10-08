@@ -9,7 +9,7 @@
 import XCTest
 @testable import tick
 
-class TestTicker: XCTestCase {
+class TickerTest: XCTestCase {
     private var ticker: Ticker!
 
     override func setUp() {

@@ -8,10 +8,15 @@
 
 import UIKit
 
+// TODO: Organize this class
 class TickerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var tealButton: UIButton!
+    @IBOutlet weak var purpleButton: UIButton!
+    @IBOutlet weak var pinkButton: UIButton!
+    @IBOutlet weak var blackButton: UIButton!
     var ticker: Ticker?
 
     @IBAction func clearIfName(_ sender: Any) {
@@ -38,6 +43,40 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         datePickerChanged(sender: timePicker)
 
         timePicker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
+    }
+
+    @IBOutlet var colorButtons: [UIButton]!
+    @IBAction func tealColor(_ sender: UIButton) {
+        selectButtons(button: sender)
+        setTickerColorTo(color: Constants.teal.rawValue)
+    }
+
+    @IBAction func purpleColor(_ sender: UIButton) {
+        selectButtons(button: sender)
+        setTickerColorTo(color: Constants.purple.rawValue)
+    }
+
+    @IBAction func pinkColor(_ sender: UIButton) {
+        selectButtons(button: sender)
+        setTickerColorTo(color: Constants.pink.rawValue)
+    }
+
+    @IBAction func blackColor(_ sender: UIButton) {
+        selectButtons(button: sender)
+        setTickerColorTo(color: Constants.black.rawValue)
+    }
+
+    func selectButtons(button: UIButton) {
+        colorButtons.forEach { colorButton in
+            colorButton.isSelected = button == colorButton
+        }
+    }
+
+    func setTickerColorTo(color: String) {
+        print("setting color to \(color)")
+        if ticker != nil {
+            ticker?.color = color
+        }
     }
 
     @objc func datePickerChanged(sender: UIDatePicker) {
@@ -135,7 +174,11 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         dateComponents.hour = timeComponents.hour
         dateComponents.minute = timeComponents.minute
 
-        self.ticker = Ticker(date: Calendar.current.date(from: dateComponents)!, name: titleField.text!)
+        if let color = ticker?.color {
+            self.ticker = Ticker(date: Calendar.current.date(from: dateComponents)!, name: titleField.text!, color: color)
+        } else {
+            self.ticker = Ticker(date: Calendar.current.date(from: dateComponents)!, name: titleField.text!)
+        }
     }
 
     private func updateUI() {
@@ -144,6 +187,18 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         updateTimeField(date: (ticker?.date)!)
         datePicker.date = (ticker?.date)!
         timePicker.date = (ticker?.date)!
+        switch ticker?.color {
+        case Constants.teal.rawValue:
+            tealButton.isSelected = true
+        case Constants.purple.rawValue:
+            purpleButton.isSelected = true
+        case Constants.pink.rawValue:
+            pinkButton.isSelected = true
+        case Constants.black.rawValue:
+            blackButton.isSelected = true
+        default:
+            break
+        }
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
