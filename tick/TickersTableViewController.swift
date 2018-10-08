@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 class TickersTableViewController: UITableViewController {
-    private var tickers = [Ticker]() {
+    var tickers = [Ticker]() {
         didSet {
             setupNotifications()
         }
@@ -135,7 +135,19 @@ class TickersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myId", for: indexPath)
         if let tickerCell = cell as? TickerTableViewCell {
+            print(tickers[indexPath.row].color)
             tickerCell.ticker = tickers[indexPath.row]
+
+            tickerCell.backgroundColor = UIColor(named: (tickerCell.ticker?.color)!)
+            if Constants.whiteText.contains((tickerCell.ticker?.color)!) {
+                tickerCell.date.textColor = UIColor.white
+                tickerCell.timeTill.textColor = UIColor.white
+                tickerCell.label.textColor = UIColor.white
+            } else {
+                tickerCell.date.textColor = UIColor.black
+                tickerCell.timeTill.textColor = UIColor.black
+                tickerCell.label.textColor = UIColor.black
+            }
 
             if (tickerCell.ticker?.date.seconds(from: Date()))! < 60, (tickerCell.ticker?.date.seconds(from: Date()))! > -60 {
                 intervalSeconds = 1.0

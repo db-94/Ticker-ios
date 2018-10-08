@@ -9,7 +9,7 @@
 import XCTest
 @testable import tick
 
-class TickTableViewTests: XCTestCase {
+class TickersTableViewControllerTests: XCTestCase {
 
     private var storyboard: UIStoryboard!
     private var navCon: UINavigationController!

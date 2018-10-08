@@ -15,6 +15,7 @@ class Ticker: Codable, Equatable {
 
     var date: Date
     var name: String
+    var color: String
 
     static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -45,6 +46,13 @@ class Ticker: Codable, Equatable {
     init(date: Date, name: String) {
         self.date = date
         self.name = name
+        self.color = Constants.teal.rawValue
+    }
+
+    init?(date: Date, name: String, color: String) {
+        self.date = date
+        self.name = name
+        self.color = color
     }
 
     var json: Data? {
@@ -67,6 +75,7 @@ class Ticker: Codable, Equatable {
         if let newValue = try? JSONDecoder().decode(Ticker.self, from: json) {
             self.date = newValue.date
             self.name = newValue.name
+            self.color = newValue.color
         } else {
             return nil
         }
