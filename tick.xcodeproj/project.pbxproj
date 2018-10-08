@@ -173,6 +173,7 @@
 					};
 					DB8E007E20E9A00100937ABB = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = DB827C1E20CB51930034863F;
 					};
 				};
@@ -452,7 +453,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.martincalvert.tickTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tick.app/tick";
 			};
@@ -473,7 +474,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.martincalvert.tickTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tick.app/tick";
 			};

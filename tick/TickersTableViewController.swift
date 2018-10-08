@@ -64,7 +64,7 @@ class TickersTableViewController: UITableViewController {
             let content = UNMutableNotificationContent()
             content.title = ticker.name
             content.body = "It is time!"
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.default
 
             let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: ticker.date)
 
@@ -148,7 +148,7 @@ class TickersTableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
 
         }
