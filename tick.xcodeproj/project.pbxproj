@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB732DA92179889900FA0298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB827C2920CB51970034863F /* Assets.xcassets */; };
+		DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB732DAA2179941700FA0298 /* NamedColorsTests.swift */; };
 		DB80133D20DDDA290019AB60 /* TickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80133C20DDDA290019AB60 /* TickerViewController.swift */; };
 		DB827C2320CB51940034863F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB827C2220CB51940034863F /* AppDelegate.swift */; };
 		DB827C2820CB51940034863F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB827C2620CB51940034863F /* Main.storyboard */; };
@@ -33,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		DB6F9CDC20F2F53A00B4ECF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DB732DAA2179941700FA0298 /* NamedColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorsTests.swift; sourceTree = "<group>"; };
 		DB80133C20DDDA290019AB60 /* TickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerViewController.swift; sourceTree = "<group>"; };
 		DB827C1F20CB51930034863F /* tick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB827C2220CB51940034863F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 				DB8E008920E9AED200937ABB /* TickerTests.swift */,
 				DB8E008120E9A00100937ABB /* TickersTableViewControllerTests.swift */,
 				DB8E008320E9A00100937ABB /* Info.plist */,
+				DB732DAA2179941700FA0298 /* NamedColorsTests.swift */,
 			);
 			path = tickTests;
 			sourceTree = "<group>";
@@ -216,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB732DA92179889900FA0298 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB8E008220E9A00100937ABB /* TickersTableViewControllerTests.swift in Sources */,
+				DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */,
 				DB8E008A20E9AED200937ABB /* TickerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
