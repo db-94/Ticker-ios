@@ -73,7 +73,6 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
     }
 
     func setTickerColorTo(color: String) {
-        print("setting color to \(color)")
         if ticker != nil {
             ticker?.color = color
         }

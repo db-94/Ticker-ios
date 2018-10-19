@@ -135,7 +135,6 @@ class TickersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myId", for: indexPath)
         if let tickerCell = cell as? TickerTableViewCell {
-            print(tickers[indexPath.row].color)
             tickerCell.ticker = tickers[indexPath.row]
 
             tickerCell.backgroundColor = UIColor(named: (tickerCell.ticker?.color)!)
