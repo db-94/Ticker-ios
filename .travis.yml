@@ -1,0 +1,12 @@
+language: swift
+matrix:
+  include:
+  - name: "iOS 12 Unit Tests & Linting"
+    xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone XS
+    osx_image: xcode10
+    xcode_project: tick.xcodeproj # path to your xcodeproj folder
+    xcode_scheme: tickTests
+branches:
+  only:
+  - master
+  - release

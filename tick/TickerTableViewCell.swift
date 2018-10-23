@@ -12,6 +12,7 @@ class TickerTableViewCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var timeTill: UILabel!
     @IBOutlet weak var date: UILabel!
+    var thing: String?
 
     public var ticker: Ticker? {
         didSet {
