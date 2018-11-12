@@ -124,10 +124,6 @@ class TickersTableViewController: UITableViewController {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tickers.count
     }
@@ -172,28 +168,20 @@ class TickersTableViewController: UITableViewController {
             self.save()
         }
 
-        let share = UITableViewRowAction(style: .default, title: "Edit") { (_, indexPath) in
+        let edit = UITableViewRowAction(style: .default, title: "Edit") { (_, indexPath) in
             self.selectedTicker = self.tickers[indexPath.row]
             self.performSegue(withIdentifier: "edit", sender: self)
         }
 
-        share.backgroundColor = UIColor.blue
+        edit.backgroundColor = UIColor.gray
 
-        return [delete, share]
+        return [delete, edit]
     }
 
     /*
      // Override to support rearranging the table view.
      override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-     }
-     */
-
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
      }
      */
 
@@ -217,7 +205,7 @@ class TickersTableViewController: UITableViewController {
         }
     }
 
-    private func save() {
+    func save() {
         let jsonData = try? JSONEncoder().encode(tickers)
         if let url = try? FileManager.default.url(
             for: .applicationSupportDirectory,

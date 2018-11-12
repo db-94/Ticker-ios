@@ -11,20 +11,118 @@ import XCTest
 
 class TickerTest: XCTestCase {
     private var ticker: Ticker!
+    private let tickerName = "test"
+    private let tickerDate = Date(timeInterval: 10.0, since: Date())
+    private let tickerColor = tick.Constants.pink.rawValue
+    private let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d yyyy"
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter
+    }()
+
+    private let dateTimeFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d yyyy hh:mmaaa"
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter
+    }()
+
+    private let timeFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mmaa"
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter
+    }()
 
     override func setUp() {
         super.setUp()
-        ticker = Ticker(date: Date(timeInterval: 10.0, since: Date()), name: "test")
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        ticker = Ticker(date: tickerDate, name: tickerName, color: tickerColor)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
 
-    func testName() {
-        XCTAssertEqual("test", ticker.name)
+    func testTickerName() {
+        XCTAssertEqual(tickerName, ticker.name)
+    }
+
+    func testTickerDate() {
+        XCTAssertEqual(tickerDate, ticker.date)
+    }
+
+    func testTickerColor() {
+        XCTAssertEqual(tickerColor, ticker.color)
+    }
+
+    func testTickerDateString() {
+        XCTAssertEqual(dateFormatter.string(from: tickerDate), ticker.dateString)
+    }
+
+    func testTickerDateTimeString() {
+        XCTAssertEqual(dateTimeFormatter.string(from: tickerDate), ticker.dateTimeString)
+    }
+
+    func testTickerTimeString() {
+        XCTAssertEqual(timeFormatter.string(from: tickerDate), ticker.timeString)
+    }
+
+    func testDateFormatter() {
+        XCTAssertEqual(dateFormatter.dateFormat, Ticker.dateFormatter.dateFormat)
+    }
+
+    func testDateTimeFormatter() {
+        XCTAssertEqual(dateTimeFormatter.dateFormat, Ticker.dateTimeFormatter.dateFormat)
+    }
+
+    func testTimeFormatter() {
+        XCTAssertEqual(timeFormatter.dateFormat, Ticker.timeFormatter.dateFormat)
+    }
+
+    func testEquals() {
+        let ticker2 = Ticker(date: tickerDate, name: tickerName, color: tickerColor)
+        XCTAssertEqual(ticker2, ticker)
+    }
+
+    func testToFromJson() {
+        let json = ticker.json
+        let newTicker = Ticker.init(json: json!)
+
+        XCTAssertNotNil(newTicker)
+        XCTAssertEqual(ticker, newTicker!)
+    }
+
+    func testDateYears() {
+        XCTAssertNotNil(tickerDate.years(from: Date()))
+    }
+
+    func testDateMonths() {
+        XCTAssertNotNil(tickerDate.months(from: Date()))
+    }
+
+    func testDateDays() {
+        XCTAssertNotNil(tickerDate.days(from: Date()))
+    }
+
+    func testDateHours() {
+        XCTAssertNotNil(tickerDate.hours(from: Date()))
+    }
+
+    func testDateMinutes() {
+        XCTAssertNotNil(tickerDate.minutes(from: Date()))
+    }
+
+    func testDateSeconds() {
+        XCTAssertNotNil(tickerDate.seconds(from: Date()))
+    }
+
+    func testDateNanoSeconds() {
+        XCTAssertNotNil(tickerDate.nanoseconds(from: Date()))
+    }
+
+    func testDateWeeks() {
+        XCTAssertNotNil(tickerDate.weeks(from: Date()))
     }
 
     func testTimeTill() {
@@ -48,12 +146,4 @@ class TickerTest: XCTestCase {
         ticker.date.addTimeInterval(90000.0)
         XCTAssertTrue(ticker.timeTill.elementsEqual("2 days until"))
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
