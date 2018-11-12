@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URh-Rm-psM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URh-Rm-psM">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -98,7 +98,7 @@
         <!--Ticker View Controller-->
         <scene sceneID="Vgr-ss-UMU">
             <objects>
-                <viewController id="378-O1-VWo" customClass="TickerViewController" customModule="tick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="378-O1-VWo" customClass="TickerViewController" customModule="tick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tz2-qH-YN2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
                                 </date>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DVP-cR-QEj">
-                                <rect key="frame" x="0.33333333333334281" y="104" width="375" height="24"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
@@ -169,7 +169,7 @@
                                         </state>
                                         <state key="selected" title="✔️"/>
                                         <connections>
-                                            <action selector="tealColor:" destination="378-O1-VWo" eventType="touchUpInside" id="C50-fw-Jix"/>
+                                            <action selector="chooseColor:" destination="378-O1-VWo" eventType="touchUpInside" id="kzs-CE-U4m"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elJ-iY-2zC">
@@ -187,7 +187,7 @@
                                         </state>
                                         <state key="selected" title="✔️"/>
                                         <connections>
-                                            <action selector="purpleColor:" destination="378-O1-VWo" eventType="touchUpInside" id="omk-EI-aE8"/>
+                                            <action selector="chooseColor:" destination="378-O1-VWo" eventType="touchUpInside" id="mF5-Wk-hql"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVa-np-bTq">
@@ -201,7 +201,7 @@
                                         </state>
                                         <state key="selected" title="✔️"/>
                                         <connections>
-                                            <action selector="pinkColor:" destination="378-O1-VWo" eventType="touchUpInside" id="uoz-Xo-NvS"/>
+                                            <action selector="chooseColor:" destination="378-O1-VWo" eventType="touchUpInside" id="0zM-2a-nfZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU4-iZ-gzn">
@@ -215,7 +215,7 @@
                                         </state>
                                         <state key="selected" title="✔️"/>
                                         <connections>
-                                            <action selector="blackColor:" destination="378-O1-VWo" eventType="touchUpInside" id="dKe-13-Hhe"/>
+                                            <action selector="chooseColor:" destination="378-O1-VWo" eventType="touchUpInside" id="1Mo-b3-IHH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -318,6 +318,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="frY-57-lic"/>
+        <segue reference="hor-wA-3Ua"/>
     </inferredMetricsTieBreakers>
 </document>

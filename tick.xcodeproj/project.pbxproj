@@ -21,6 +21,8 @@
 		DBDE649520CF51770066A4B8 /* TickersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE649420CF51770066A4B8 /* TickersTableViewController.swift */; };
 		DBDE649720D893ED0066A4B8 /* TickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE649620D893ED0066A4B8 /* TickerTableViewCell.swift */; };
 		DBDF7025214AA6B900390191 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF7024214AA6B900390191 /* constants.swift */; };
+		DBEBC6A22195DB0600C66398 /* TickerTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEBC6A12195DB0600C66398 /* TickerTableViewCellTests.swift */; };
+		DBEBC6A42199B82C00C66398 /* TickerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEBC6A32199B82C00C66398 /* TickerViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		DBDE649420CF51770066A4B8 /* TickersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersTableViewController.swift; sourceTree = "<group>"; };
 		DBDE649620D893ED0066A4B8 /* TickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTableViewCell.swift; sourceTree = "<group>"; };
 		DBDF7024214AA6B900390191 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		DBEBC6A12195DB0600C66398 /* TickerTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTableViewCellTests.swift; sourceTree = "<group>"; };
+		DBEBC6A32199B82C00C66398 /* TickerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				DB8E008920E9AED200937ABB /* TickerTests.swift */,
+				DBEBC6A32199B82C00C66398 /* TickerViewControllerTests.swift */,
 				DB8E008120E9A00100937ABB /* TickersTableViewControllerTests.swift */,
+				DBEBC6A12195DB0600C66398 /* TickerTableViewCellTests.swift */,
 				DB8E008320E9A00100937ABB /* Info.plist */,
 				DB732DAA2179941700FA0298 /* NamedColorsTests.swift */,
 			);
@@ -261,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB8E008220E9A00100937ABB /* TickersTableViewControllerTests.swift in Sources */,
+				DBEBC6A42199B82C00C66398 /* TickerViewControllerTests.swift in Sources */,
+				DBEBC6A22195DB0600C66398 /* TickerTableViewCellTests.swift in Sources */,
 				DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */,
 				DB8E008A20E9AED200937ABB /* TickerTests.swift in Sources */,
 			);

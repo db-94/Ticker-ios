@@ -8,8 +8,10 @@
 
 import UIKit
 
-// TODO: Organize this class
 class TickerViewController: UIViewController, UITextFieldDelegate {
+
+    // MARK: - Variables
+
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timePicker: UIDatePicker!
@@ -17,15 +19,26 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var purpleButton: UIButton!
     @IBOutlet weak var pinkButton: UIButton!
     @IBOutlet weak var blackButton: UIButton!
+    @IBOutlet weak var dateField: UIButton!
+    @IBOutlet weak var timeField: UIButton!
     var ticker: Ticker?
+    private var color: String = Constants.teal.rawValue
+
+    // MARK: - Title field methods
 
     @IBAction func clearIfName(_ sender: Any) {
         if titleField.text == "Name" {
             titleField.text = ""
         }
     }
-    @IBOutlet weak var dateField: UIButton!
-    @IBOutlet weak var timeField: UIButton!
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+
+    // MARK: - Date & Time field methods
+
     @IBAction func loadDatePicker(_ sender: Any) {
         titleField.resignFirstResponder()
         timePicker.isHidden = true
@@ -45,39 +58,6 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         timePicker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
     }
 
-    @IBOutlet var colorButtons: [UIButton]!
-    @IBAction func tealColor(_ sender: UIButton) {
-        selectButtons(button: sender)
-        setTickerColorTo(color: Constants.teal.rawValue)
-    }
-
-    @IBAction func purpleColor(_ sender: UIButton) {
-        selectButtons(button: sender)
-        setTickerColorTo(color: Constants.purple.rawValue)
-    }
-
-    @IBAction func pinkColor(_ sender: UIButton) {
-        selectButtons(button: sender)
-        setTickerColorTo(color: Constants.pink.rawValue)
-    }
-
-    @IBAction func blackColor(_ sender: UIButton) {
-        selectButtons(button: sender)
-        setTickerColorTo(color: Constants.black.rawValue)
-    }
-
-    func selectButtons(button: UIButton) {
-        colorButtons.forEach { colorButton in
-            colorButton.isSelected = button == colorButton
-        }
-    }
-
-    func setTickerColorTo(color: String) {
-        if ticker != nil {
-            ticker?.color = color
-        }
-    }
-
     @objc func datePickerChanged(sender: UIDatePicker) {
         switch sender.datePickerMode {
         case .date:
@@ -85,7 +65,7 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         case .time:
             updateTimeField(date: sender.date)
         default:
-            print("wrong type")
+            print("Wrong type for datePickerMode")
         }
     }
 
@@ -103,6 +83,29 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    // MARK: - Color selection buttons
+
+    @IBOutlet var colorButtons: [UIButton]!
+    @IBAction func chooseColor(_ sender: UIButton) {
+        colorButtons.forEach { colorButton in
+            colorButton.isSelected = sender == colorButton
+        }
+        switch sender.titleLabel?.text! {
+        case "Teal":
+            color = Constants.teal.rawValue
+        case "Black":
+            color = Constants.black.rawValue
+        case "Purple":
+            color = Constants.purple.rawValue
+        case "Pink":
+            color = Constants.pink.rawValue
+        default:
+            break
+        }
+    }
+
+    // MARK: - View Lifecycle methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -117,11 +120,6 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         timePicker.datePickerMode = .time
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -166,21 +164,7 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         timePicker.isHidden = true
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: timePicker.date)
-        var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: datePicker.date)
-
-        dateComponents.hour = timeComponents.hour
-        dateComponents.minute = timeComponents.minute
-
-        if let color = ticker?.color {
-            self.ticker = Ticker(date: Calendar.current.date(from: dateComponents)!, name: titleField.text!, color: color)
-        } else {
-            self.ticker = Ticker(date: Calendar.current.date(from: dateComponents)!, name: titleField.text!)
-        }
-    }
-
-    private func updateUI() {
+    func updateUI() {
         titleField.text = ticker?.name
         updateDateField(date: (ticker?.date)!)
         updateTimeField(date: (ticker?.date)!)
@@ -200,19 +184,15 @@ class TickerViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return false
-    }
+    // MARK: - Segue Navigation methods
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: timePicker.date)
+        var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: datePicker.date)
 
+        dateComponents.hour = timeComponents.hour
+        dateComponents.minute = timeComponents.minute
+
+        self.ticker = Ticker(date: Calendar.current.date(from: dateComponents)!, name: titleField.text!, color: color)
+    }
 }

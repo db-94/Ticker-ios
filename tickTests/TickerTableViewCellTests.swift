@@ -1,15 +1,15 @@
 //
-//  tickTests.swift
+//  TickerTableViewCellTests.swift
 //  tickTests
 //
-//  Created by Martin Calvert on 7/1/18.
+//  Created by Martin Calvert on 11/9/18.
 //  Copyright © 2018 Martin Calvert. All rights reserved.
 //
 
 import XCTest
 @testable import tick
 
-class TickersTableViewControllerTests: XCTestCase {
+class TickerTableViewCellTests: XCTestCase {
     private var storyboard: UIStoryboard!
     private var navCon: UINavigationController!
     private var tickerTable: TickersTableViewController!
@@ -29,10 +29,10 @@ class TickersTableViewControllerTests: XCTestCase {
 
         do {
             actualUrl = try FileManager.default.url(
-                for: .applicationSupportDirectory,
-                in: .userDomainMask,
-                appropriateFor: nil,
-                create: true
+                    for: .applicationSupportDirectory,
+                    in: .userDomainMask,
+                    appropriateFor: nil,
+                    create: true
                 ).appendingPathComponent("user.json")
         } catch let error {
             print(error)
@@ -54,6 +54,7 @@ class TickersTableViewControllerTests: XCTestCase {
         navCon = storyboard.instantiateInitialViewController() as? UINavigationController
         tickerTable = navCon!.topViewController as? TickersTableViewController
         _ = tickerTable.view
+        tickerTable.tableView.numberOfRows(inSection: 0)
     }
 
     override func tearDown() {
@@ -67,44 +68,30 @@ class TickersTableViewControllerTests: XCTestCase {
         }
     }
 
-    func testNavTitle() {
-        XCTAssertEqual("Ticker", tickerTable!.navigationItem.title)
+    func testPinkCell() {
+        if let cell = tickerTable!.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TickerTableViewCell {
+            XCTAssertEqual(UIColor(named: tick.Constants.pink.rawValue), cell.backgroundColor)
+            XCTAssertEqual(tickers[0].name, cell.label.text!)
+            XCTAssertEqual(tickers[0].dateTimeString, cell.date.text!)
+            XCTAssertEqual(tickers[0].timeTill, cell.timeTill.text!)
+        }
     }
 
-    func testAddButtonIsPresent() {
-        let addButton = tickerTable.navigationItem.rightBarButtonItems?[0]
-        XCTAssertNotNil(addButton)
-        XCTAssertEqual(addButton?.tintColor, UIColor.white)
+    func testTealCell() {
+        if let cell = tickerTable!.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? TickerTableViewCell {
+            XCTAssertEqual(UIColor(named: tick.Constants.teal.rawValue), cell.backgroundColor)
+            XCTAssertEqual(tickers[1].name, cell.label.text!)
+            XCTAssertEqual(tickers[1].dateTimeString, cell.date.text!)
+            XCTAssertEqual(tickers[1].timeTill, cell.timeTill.text!)
+        }
     }
 
-    func testBackButtonIsNotPresent() {
-        let addButton = tickerTable.navigationItem.leftBarButtonItems?[0]
-        XCTAssertNil(addButton)
-    }
-
-    func testTableViewSections() {
-        XCTAssertEqual(1, tickerTable!.tableView.numberOfSections)
-    }
-
-    func testTableViewRowsEqualToTickers() {
-        XCTAssertEqual(tickers.count, tickerTable.tableView.numberOfRows(inSection: 0))
-    }
-
-    func testSave() {
-        tickerTable.save()
-        XCTAssertNotNil(try Data(contentsOf: actualUrl))
-    }
-
-    func testUnwindFromNew() {
-        let tickerVC = storyboard.instantiateViewController(withIdentifier: "tickerViewController") as? TickerViewController
-        let newTicker = Ticker(date: Date(), name: "fourth", color: tick.Constants.black.rawValue)!
-        let count = tickerTable.tickers.count
-        tickerVC?.ticker = newTicker
-        let segue = UIStoryboardSegue(identifier: "new", source: tickerVC!, destination: tickerTable)
-
-        tickerTable.unwwindFromNew(segue)
-
-        XCTAssertEqual(count + 1, tickerTable.tickers.count)
-        XCTAssertEqual("fourth", tickerTable.tickers[3].name)
+    func testPurpleCell() {
+        if let cell = tickerTable!.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? TickerTableViewCell {
+            XCTAssertEqual(UIColor(named: tick.Constants.purple.rawValue), cell.backgroundColor)
+            XCTAssertEqual(tickers[2].name, cell.label.text!)
+            XCTAssertEqual(tickers[2].dateTimeString, cell.date.text!)
+            XCTAssertEqual(tickers[2].timeTill, cell.timeTill.text!)
+        }
     }
 }

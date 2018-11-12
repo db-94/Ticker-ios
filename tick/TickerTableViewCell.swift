@@ -20,16 +20,10 @@ class TickerTableViewCell: UITableViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         self.contentView.bounds = self.bounds
         updateUI()
-        // Configure the view for the selected state
     }
 
     public func updateUI() {
