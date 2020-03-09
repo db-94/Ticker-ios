@@ -14,6 +14,33 @@ struct TickersUIView: View {
     @State private var tempTicker: Ticker = Ticker.defaultTicker()
     @State private var saveTicker: Bool = false
 
+    func setupNotifications() {
+        //Scheduling the Notification
+        let center = UNUserNotificationCenter.current()
+
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+
+        for ticker in self.tickerFetcher.tickers {
+            let content = UNMutableNotificationContent()
+            content.title = ticker.name
+            content.body = "It is time!"
+            content.sound = UNNotificationSound.default
+
+            let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: ticker.date)
+
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+
+            let request = UNNotificationRequest(identifier: "REMINDER", content: content, trigger: trigger)
+
+            center.add(request) { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+
     var body: some View {
         VStack {
             Image("header").resizable().frame(width: CGFloat(200.0), height: CGFloat(70.0), alignment: .bottom).padding(.all, -15.0)
@@ -56,6 +83,9 @@ struct TickersUIView: View {
                             }) { TickerUIView(ticker: self.$tempTicker, dismiss: self.$showTicker, saveTicker: self.$saveTicker) }
                     }
                 }
+            }.onReceive(self.tickerFetcher.objectWillChange) {
+                self.setupNotifications()
+
             }
         }
     }
@@ -74,8 +104,9 @@ struct TickersUIView: View {
                 print(error)
             }
         }
-        print("after url")
     }
+
+    
 }
 
 struct TickersUIView_Previews: PreviewProvider {
