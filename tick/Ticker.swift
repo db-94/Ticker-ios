@@ -8,14 +8,19 @@
 
 import Foundation
 
-class Ticker: Codable, Equatable {
+struct Ticker: Codable, Equatable, Identifiable {
     static func == (lhs: Ticker, rhs: Ticker) -> Bool {
         return lhs.name == rhs.name && lhs.date == rhs.date
     }
 
+    var id: UUID
     var date: Date
     var name: String
     var color: String
+
+    static func defaultTicker() -> Ticker {
+        return Ticker(date: Date(), name: "")
+    }
 
     static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -47,12 +52,14 @@ class Ticker: Codable, Equatable {
         self.date = date
         self.name = name
         self.color = Constants.teal.rawValue
+        self.id = UUID()
     }
 
     init?(date: Date, name: String, color: String) {
         self.date = date
         self.name = name
         self.color = color
+        self.id = UUID()
     }
 
     var json: Data? {
@@ -76,6 +83,7 @@ class Ticker: Codable, Equatable {
             self.date = newValue.date
             self.name = newValue.name
             self.color = newValue.color
+            self.id = newValue.id
         } else {
             return nil
         }
@@ -117,6 +125,7 @@ extension Date {
     }
     /// Returns the a custom time interval description from another date
     func offset(from date: Date, withString: String) -> String {
+        print(withString)
         if seconds(from: date) < 0 { return date.offset(from: self, withString: "since") }
         if days(from: date) > 0 {
             let tempDays = days(from: date)
