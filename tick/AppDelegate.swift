@@ -16,19 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tickers: [Ticker]?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let navigationBarAppearace = UINavigationBar.appearance()
-
-        UIApplication.shared.statusBarStyle = .lightContent
-
-        navigationBarAppearace.tintColor = .white
-        navigationBarAppearace.barTintColor = .black
-        navigationBarAppearace.isOpaque = false
-        navigationBarAppearace.isTranslucent = false
-        navigationBarAppearace.titleTextAttributes =
-            [NSAttributedString.Key.strokeColor: UIColor.white,
-                NSAttributedString.Key.strikethroughColor: UIColor.white,
-                NSAttributedString.Key.foregroundColor: UIColor.white]
-
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.badge, .sound, .alert]) { (_, _) in
             //granted = yes, if app is authorized for all of the requested interaction types
@@ -37,6 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Override point for customization after application launch.
         return true
+    }
+
+    // MARK: UISceneSession Lifecycle
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -7,22 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB454AEE2405FBC7001953DE /* TickersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AED2405FBC7001953DE /* TickersUIView.swift */; };
+		DB454AEF2405FBC7001953DE /* TickersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AED2405FBC7001953DE /* TickersUIView.swift */; };
+		DB454AF12405FC53001953DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF02405FC53001953DE /* SceneDelegate.swift */; };
+		DB454AF22405FC53001953DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF02405FC53001953DE /* SceneDelegate.swift */; };
+		DB454AF32405FFE0001953DE /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB827C3420CF47140034863F /* Ticker.swift */; };
+		DB454AF42405FFF2001953DE /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF7024214AA6B900390191 /* constants.swift */; };
+		DB454AF6240605C2001953DE /* TickerRowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF5240605C2001953DE /* TickerRowUIView.swift */; };
+		DB454AF7240605C2001953DE /* TickerRowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF5240605C2001953DE /* TickerRowUIView.swift */; };
+		DB454AF924116557001953DE /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
+		DB454AFA24116557001953DE /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
+		DB454AFC2415FB94001953DE /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
+		DB454AFD2415FB94001953DE /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
 		DB732DA92179889900FA0298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB827C2920CB51970034863F /* Assets.xcassets */; };
 		DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB732DAA2179941700FA0298 /* NamedColorsTests.swift */; };
-		DB80133D20DDDA290019AB60 /* TickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80133C20DDDA290019AB60 /* TickerViewController.swift */; };
 		DB827C2320CB51940034863F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB827C2220CB51940034863F /* AppDelegate.swift */; };
-		DB827C2820CB51940034863F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB827C2620CB51940034863F /* Main.storyboard */; };
 		DB827C2A20CB51970034863F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB827C2920CB51970034863F /* Assets.xcassets */; };
 		DB827C2D20CB51970034863F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB827C2B20CB51970034863F /* LaunchScreen.storyboard */; };
 		DB827C3520CF47140034863F /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB827C3420CF47140034863F /* Ticker.swift */; };
-		DB8E008220E9A00100937ABB /* TickersTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E008120E9A00100937ABB /* TickersTableViewControllerTests.swift */; };
 		DB8E008A20E9AED200937ABB /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E008920E9AED200937ABB /* TickerTests.swift */; };
 		DBCC02272131D2C800BA8425 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBCC02262131D2C800BA8425 /* .swiftlint.yml */; };
-		DBDE649520CF51770066A4B8 /* TickersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE649420CF51770066A4B8 /* TickersTableViewController.swift */; };
-		DBDE649720D893ED0066A4B8 /* TickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE649620D893ED0066A4B8 /* TickerTableViewCell.swift */; };
 		DBDF7025214AA6B900390191 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF7024214AA6B900390191 /* constants.swift */; };
-		DBEBC6A22195DB0600C66398 /* TickerTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEBC6A12195DB0600C66398 /* TickerTableViewCellTests.swift */; };
-		DBEBC6A42199B82C00C66398 /* TickerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEBC6A32199B82C00C66398 /* TickerViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,26 +41,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB454AED2405FBC7001953DE /* TickersUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersUIView.swift; sourceTree = "<group>"; };
+		DB454AF02405FC53001953DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DB454AF5240605C2001953DE /* TickerRowUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRowUIView.swift; sourceTree = "<group>"; };
+		DB454AF824116556001953DE /* TickerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerUIView.swift; sourceTree = "<group>"; };
+		DB454AFB2415FB94001953DE /* TickerFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerFetcher.swift; sourceTree = "<group>"; };
 		DB6F9CDC20F2F53A00B4ECF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DB732DAA2179941700FA0298 /* NamedColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorsTests.swift; sourceTree = "<group>"; };
-		DB80133C20DDDA290019AB60 /* TickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerViewController.swift; sourceTree = "<group>"; };
 		DB827C1F20CB51930034863F /* tick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB827C2220CB51940034863F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB827C2720CB51940034863F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB827C2920CB51970034863F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB827C2C20CB51970034863F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB827C2E20CB51970034863F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB827C3420CF47140034863F /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		DB8E007F20E9A00100937ABB /* tickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB8E008120E9A00100937ABB /* TickersTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersTableViewControllerTests.swift; sourceTree = "<group>"; };
 		DB8E008320E9A00100937ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8E008920E9AED200937ABB /* TickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTests.swift; sourceTree = "<group>"; };
 		DBCC02262131D2C800BA8425 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		DBDE649420CF51770066A4B8 /* TickersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersTableViewController.swift; sourceTree = "<group>"; };
-		DBDE649620D893ED0066A4B8 /* TickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTableViewCell.swift; sourceTree = "<group>"; };
 		DBDF7024214AA6B900390191 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
-		DBEBC6A12195DB0600C66398 /* TickerTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTableViewCellTests.swift; sourceTree = "<group>"; };
-		DBEBC6A32199B82C00C66398 /* TickerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 		DB827C1620CB51930034863F = {
 			isa = PBXGroup;
 			children = (
+				DB454AFB2415FB94001953DE /* TickerFetcher.swift */,
 				DBCC02262131D2C800BA8425 /* .swiftlint.yml */,
 				DB6F9CDC20F2F53A00B4ECF3 /* README.md */,
 				DB827C2120CB51930034863F /* tick */,
@@ -99,16 +103,16 @@
 		DB827C2120CB51930034863F /* tick */ = {
 			isa = PBXGroup;
 			children = (
-				DBDE649620D893ED0066A4B8 /* TickerTableViewCell.swift */,
-				DBDE649420CF51770066A4B8 /* TickersTableViewController.swift */,
 				DB827C2220CB51940034863F /* AppDelegate.swift */,
-				DB80133C20DDDA290019AB60 /* TickerViewController.swift */,
-				DB827C2620CB51940034863F /* Main.storyboard */,
 				DB827C3420CF47140034863F /* Ticker.swift */,
 				DB827C2920CB51970034863F /* Assets.xcassets */,
 				DB827C2B20CB51970034863F /* LaunchScreen.storyboard */,
 				DB827C2E20CB51970034863F /* Info.plist */,
 				DBDF7024214AA6B900390191 /* constants.swift */,
+				DB454AED2405FBC7001953DE /* TickersUIView.swift */,
+				DB454AF824116556001953DE /* TickerUIView.swift */,
+				DB454AF02405FC53001953DE /* SceneDelegate.swift */,
+				DB454AF5240605C2001953DE /* TickerRowUIView.swift */,
 			);
 			path = tick;
 			sourceTree = "<group>";
@@ -117,9 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				DB8E008920E9AED200937ABB /* TickerTests.swift */,
-				DBEBC6A32199B82C00C66398 /* TickerViewControllerTests.swift */,
-				DB8E008120E9A00100937ABB /* TickersTableViewControllerTests.swift */,
-				DBEBC6A12195DB0600C66398 /* TickerTableViewCellTests.swift */,
 				DB8E008320E9A00100937ABB /* Info.plist */,
 				DB732DAA2179941700FA0298 /* NamedColorsTests.swift */,
 			);
@@ -177,7 +178,7 @@
 				TargetAttributes = {
 					DB827C1E20CB51930034863F = {
 						CreatedOnToolsVersion = 9.3.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1130;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -186,7 +187,7 @@
 					};
 					DB8E007E20E9A00100937ABB = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1130;
 						TestTargetID = DB827C1E20CB51930034863F;
 					};
 				};
@@ -218,7 +219,6 @@
 				DBCC02272131D2C800BA8425 /* .swiftlint.yml in Resources */,
 				DB827C2D20CB51970034863F /* LaunchScreen.storyboard in Resources */,
 				DB827C2A20CB51970034863F /* Assets.xcassets in Resources */,
-				DB827C2820CB51940034863F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,12 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBDE649520CF51770066A4B8 /* TickersTableViewController.swift in Sources */,
-				DB80133D20DDDA290019AB60 /* TickerViewController.swift in Sources */,
-				DBDE649720D893ED0066A4B8 /* TickerTableViewCell.swift in Sources */,
+				DB454AF924116557001953DE /* TickerUIView.swift in Sources */,
+				DB454AF6240605C2001953DE /* TickerRowUIView.swift in Sources */,
 				DB827C3520CF47140034863F /* Ticker.swift in Sources */,
 				DB827C2320CB51940034863F /* AppDelegate.swift in Sources */,
+				DB454AFC2415FB94001953DE /* TickerFetcher.swift in Sources */,
 				DBDF7025214AA6B900390191 /* constants.swift in Sources */,
+				DB454AEE2405FBC7001953DE /* TickersUIView.swift in Sources */,
+				DB454AF12405FC53001953DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +268,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB8E008220E9A00100937ABB /* TickersTableViewControllerTests.swift in Sources */,
-				DBEBC6A42199B82C00C66398 /* TickerViewControllerTests.swift in Sources */,
-				DBEBC6A22195DB0600C66398 /* TickerTableViewCellTests.swift in Sources */,
+				DB454AF7240605C2001953DE /* TickerRowUIView.swift in Sources */,
+				DB454AF32405FFE0001953DE /* Ticker.swift in Sources */,
+				DB454AF42405FFF2001953DE /* constants.swift in Sources */,
+				DB454AF22405FC53001953DE /* SceneDelegate.swift in Sources */,
+				DB454AFA24116557001953DE /* TickerUIView.swift in Sources */,
+				DB454AEF2405FBC7001953DE /* TickersUIView.swift in Sources */,
+				DB454AFD2415FB94001953DE /* TickerFetcher.swift in Sources */,
 				DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */,
 				DB8E008A20E9AED200937ABB /* TickerTests.swift in Sources */,
 			);
@@ -285,14 +291,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DB827C2620CB51940034863F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB827C2720CB51940034863F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DB827C2B20CB51970034863F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -425,14 +423,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E33ZQZLW6Z;
 				INFOPLIST_FILE = tick/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.martincalvert.tick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -444,14 +442,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E33ZQZLW6Z;
 				INFOPLIST_FILE = tick/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.martincalvert.tick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -463,7 +461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E33ZQZLW6Z;
 				INFOPLIST_FILE = tickTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,7 +469,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.martincalvert.tickTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tick.app/tick";
 			};
@@ -484,7 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E33ZQZLW6Z;
 				INFOPLIST_FILE = tickTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +490,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.martincalvert.tickTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tick.app/tick";
 			};
