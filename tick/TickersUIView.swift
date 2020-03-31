@@ -13,6 +13,9 @@ struct TickersUIView: View {
     @State private var showTicker: Bool = false
     @State private var tempTicker: Ticker = Ticker.defaultTicker()
     @State private var saveTicker: Bool = false
+    @State var needRefresh: Bool = false
+    @State var timer = Timer.publish(every: 60.0, on: .main, in: .common).autoconnect()
+    @State var intervalSeconds = 20.0
 
     func setupNotifications() {
         //Scheduling the Notification
@@ -41,16 +44,27 @@ struct TickersUIView: View {
         }
     }
 
+    private func onDelete(offsets: IndexSet) {
+        tickerFetcher.tickers.remove(atOffsets: offsets)
+        save(tickers: tickerFetcher.tickers)
+    }
+
     var body: some View {
         VStack {
             Image("header").resizable().frame(width: CGFloat(200.0), height: CGFloat(70.0), alignment: .bottom).padding(.all, -15.0)
+            Divider()
             ZStack {
-                List(tickerFetcher.tickers, id: \Ticker.id) { ticker in
-                    TickerRowUIView(ticker: ticker).onTapGesture {
-                        self.tempTicker = ticker
-                        self.showTicker.toggle()
+                List {
+                    ForEach(tickerFetcher.tickers, id: \Ticker.id) { ticker in
+                        TickerRowUIView(ticker: ticker, needRefresh: self.$needRefresh).onTapGesture {
+                            self.tempTicker = ticker
+                            self.showTicker.toggle()
+                        }
+                    }.onDelete(perform: onDelete).onReceive(timer) { _ in
+                        self.needRefresh.toggle()
                     }
                 }
+
                 VStack {
                     Spacer()
                     HStack {
@@ -85,10 +99,15 @@ struct TickersUIView: View {
                 }
             }.onReceive(self.tickerFetcher.objectWillChange) {
                 self.setupNotifications()
-
+                self.setupTimer()
+            }.onAppear {
+                self.setupTimer()
+                self.setupNotifications()
             }
         }
     }
+
+    // MARK: - Helper Functions
 
     func save(tickers: [Ticker]) {
         let jsonData = try? JSONEncoder().encode(tickers)
@@ -106,7 +125,18 @@ struct TickersUIView: View {
         }
     }
 
-    
+    func setupTimer() {
+        for ticker in self.tickerFetcher.tickers {
+            if (ticker.date.seconds(from: Date()) < 60 && ticker.date.seconds(from: Date()) > -60) {
+                self.intervalSeconds = 1.0
+                break
+            } else {
+                self.intervalSeconds = 30.0
+            }
+        }
+
+        timer = Timer.publish(every: self.intervalSeconds, on: .main, in: .common).autoconnect()
+    }
 }
 
 struct TickersUIView_Previews: PreviewProvider {

@@ -125,7 +125,6 @@ extension Date {
     }
     /// Returns the a custom time interval description from another date
     func offset(from date: Date, withString: String) -> String {
-        print(withString)
         if seconds(from: date) < 0 { return date.offset(from: self, withString: "since") }
         if days(from: date) > 0 {
             let tempDays = days(from: date)
@@ -143,6 +142,6 @@ extension Date {
             let tempSeconds = seconds(from: date)
             return tempSeconds > 1 ? "\(tempSeconds) seconds \(withString)" : "\(tempSeconds) second \(withString)"
         }
-        return ""
+        return "now"
     }
 }
