@@ -17,33 +17,6 @@ struct TickersUIView: View {
     @State var timer = Timer.publish(every: 60.0, on: .main, in: .common).autoconnect()
     @State var intervalSeconds = 20.0
 
-    func setupNotifications() {
-        //Scheduling the Notification
-        let center = UNUserNotificationCenter.current()
-
-        center.removeAllDeliveredNotifications()
-        center.removeAllPendingNotificationRequests()
-
-        for ticker in self.tickerFetcher.tickers {
-            let content = UNMutableNotificationContent()
-            content.title = ticker.name
-            content.body = "It is time!"
-            content.sound = UNNotificationSound.default
-
-            let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: ticker.date)
-
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-
-            let request = UNNotificationRequest(identifier: "REMINDER", content: content, trigger: trigger)
-
-            center.add(request) { (error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-            }
-        }
-    }
-
     private func onDelete(offsets: IndexSet) {
         tickerFetcher.tickers.remove(atOffsets: offsets)
         save(tickers: tickerFetcher.tickers)
@@ -136,6 +109,33 @@ struct TickersUIView: View {
         }
 
         timer = Timer.publish(every: self.intervalSeconds, on: .main, in: .common).autoconnect()
+    }
+
+    func setupNotifications() {
+        //Scheduling the Notification
+        let center = UNUserNotificationCenter.current()
+
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+
+        for ticker in self.tickerFetcher.tickers {
+            let content = UNMutableNotificationContent()
+            content.title = ticker.name
+            content.body = "It is time!"
+            content.sound = UNNotificationSound.default
+
+            let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: ticker.date)
+
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+
+            let request = UNNotificationRequest(identifier: "REMINDER", content: content, trigger: trigger)
+
+            center.add(request) { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }
 
