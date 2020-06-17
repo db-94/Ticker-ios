@@ -29,6 +29,6 @@ struct TickerRowUIView: View {
 
 struct TickerRowUIView_Previews: PreviewProvider {
     static var previews: some View {
-        TickerRowUIView(ticker: Ticker(date: Date().addingTimeInterval(TimeInterval(1000)), name: "Test"), needRefresh: .constant(true))
+        TickerRowUIView(ticker: Ticker(date: Date().addingTimeInterval(TimeInterval(1000)), name: "Martin"), needRefresh: .constant(true))
     }
 }

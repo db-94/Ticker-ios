@@ -107,6 +107,7 @@
 			children = (
 				DB5F3011247CBACE00F8448C /* fastlane */,
 				DB5F300F247CB84A00F8448C /* SnapshotHelper.swift */,
+				DB454AFB2415FB94001953DE /* TickerFetcher.swift */,
 				DBCC02262131D2C800BA8425 /* .swiftlint.yml */,
 				DB6F9CDC20F2F53A00B4ECF3 /* README.md */,
 				DB827C2120CB51930034863F /* tick */,
