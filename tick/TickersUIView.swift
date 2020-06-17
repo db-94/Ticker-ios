@@ -100,7 +100,7 @@ struct TickersUIView: View {
 
     func setupTimer() {
         for ticker in self.tickerFetcher.tickers {
-            if (ticker.date.seconds(from: Date()) < 60 && ticker.date.seconds(from: Date()) > -60) {
+            if ticker.date.seconds(from: Date()) < 60 && ticker.date.seconds(from: Date()) > -60 {
                 self.intervalSeconds = 1.0
                 break
             } else {
