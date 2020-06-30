@@ -60,7 +60,7 @@ class TickUITests: XCTestCase {
         existsAndHittable(element: app.buttons["Save"])
 
         app.textFields["Name"].tap()
-        app.textFields["Name"].typeText("Vacation")
+        app.textFields["Name"].typeText("Vacation \n")
 
         snapshot("createScreen")
         app.buttons["Save"].tap()
