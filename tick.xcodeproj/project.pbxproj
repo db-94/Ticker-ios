@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB25A7C224AB0244009C7DCF /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
+		DB25A7C324AB0248009C7DCF /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
+		DB25A7C424AB03A2009C7DCF /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB827C3420CF47140034863F /* Ticker.swift */; };
+		DB25A7C524AB03A9009C7DCF /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF7024214AA6B900390191 /* constants.swift */; };
+		DB25A7C624AB03AE009C7DCF /* TickersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AED2405FBC7001953DE /* TickersUIView.swift */; };
+		DB25A7C724AB03B4009C7DCF /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
+		DB25A7C824AB03BC009C7DCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF02405FC53001953DE /* SceneDelegate.swift */; };
+		DB25A7C924AB0427009C7DCF /* TickerRowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF5240605C2001953DE /* TickerRowUIView.swift */; };
 		DB454AEE2405FBC7001953DE /* TickersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AED2405FBC7001953DE /* TickersUIView.swift */; };
 		DB454AEF2405FBC7001953DE /* TickersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AED2405FBC7001953DE /* TickersUIView.swift */; };
 		DB454AF12405FC53001953DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF02405FC53001953DE /* SceneDelegate.swift */; };
@@ -18,7 +26,6 @@
 		DB454AF924116557001953DE /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
 		DB454AFA24116557001953DE /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
 		DB454AFC2415FB94001953DE /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
-		DB454AFD2415FB94001953DE /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
 		DB5F3010247CB84A00F8448C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5F300F247CB84A00F8448C /* SnapshotHelper.swift */; };
 		DB732DA92179889900FA0298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB827C2920CB51970034863F /* Assets.xcassets */; };
 		DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB732DAA2179941700FA0298 /* NamedColorsTests.swift */; };
@@ -130,7 +137,6 @@
 		DB827C2120CB51930034863F /* tick */ = {
 			isa = PBXGroup;
 			children = (
-				DB454AFB2415FB94001953DE /* TickerFetcher.swift */,
 				DB827C2220CB51940034863F /* AppDelegate.swift */,
 				DB827C3420CF47140034863F /* Ticker.swift */,
 				DB827C2920CB51970034863F /* Assets.xcassets */,
@@ -343,9 +349,9 @@
 				DB454AF22405FC53001953DE /* SceneDelegate.swift in Sources */,
 				DB454AFA24116557001953DE /* TickerUIView.swift in Sources */,
 				DB454AEF2405FBC7001953DE /* TickersUIView.swift in Sources */,
-				DB454AFD2415FB94001953DE /* TickerFetcher.swift in Sources */,
 				DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */,
 				DB8E008A20E9AED200937ABB /* TickerTests.swift in Sources */,
+				DB25A7C324AB0248009C7DCF /* TickerFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,8 +359,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB25A7C724AB03B4009C7DCF /* TickerUIView.swift in Sources */,
+				DB25A7C224AB0244009C7DCF /* TickerFetcher.swift in Sources */,
+				DB25A7C924AB0427009C7DCF /* TickerRowUIView.swift in Sources */,
+				DB25A7C424AB03A2009C7DCF /* Ticker.swift in Sources */,
+				DB25A7C624AB03AE009C7DCF /* TickersUIView.swift in Sources */,
 				DBF352DD2439BAB2008EB947 /* tickUITests.swift in Sources */,
+				DB25A7C524AB03A9009C7DCF /* constants.swift in Sources */,
 				DB5F3010247CB84A00F8448C /* SnapshotHelper.swift in Sources */,
+				DB25A7C824AB03BC009C7DCF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

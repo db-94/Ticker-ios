@@ -40,7 +40,6 @@ class TickUITests: XCTestCase {
         app.launch()
 
         existsAndHittable(element: app.buttons["+"])
-        app.screenshot()
     }
 
     func testPlusButtonLeadsToModal() throws {
@@ -63,8 +62,10 @@ class TickUITests: XCTestCase {
         app.textFields["Name"].tap()
         app.textFields["Name"].typeText("Vacation")
 
-        app.screenshot()
-        snapshot("01LoginScreen")
+        snapshot("createScreen")
+        app.buttons["Save"].tap()
+
+        snapshot("homeScreen")
     }
 
     func existsAndHittable(element: XCUIElement) {

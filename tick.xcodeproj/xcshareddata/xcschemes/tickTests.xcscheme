@@ -34,6 +34,20 @@
                ReferencedContainer = "container:tick.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DBF352D92439BAB2008EB947"
+               BuildableName = "tickUITests.xctest"
+               BlueprintName = "tickUITests"
+               ReferencedContainer = "container:tick.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
