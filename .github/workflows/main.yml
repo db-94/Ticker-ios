@@ -6,6 +6,7 @@ jobs:
   unit-tests:
     runs-on: macos-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Unit Tests
       uses: maierj/fastlane-action@v1.4.0
       with:
@@ -14,6 +15,7 @@ jobs:
   ui-tests:
     runs-on: macos-latest
     steps:
+    - uses: actions/checkout@v2
     - name: UI Tests
       uses: maierj/fastlane-action@v1.4.0
       with:
