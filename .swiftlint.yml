@@ -2,6 +2,9 @@ opt_in_rules:
 - empty_count
 - empty_string
 
+excluded:
+- fastlane
+
 line_length:
     warning: 150
     error: 200
@@ -29,5 +32,9 @@ file_length:
 cyclomatic_complexity:
     warning: 15
     error: 25
+
+identifier_name:
+    min_length:
+        error: 1
 
 reporter: "xcode"

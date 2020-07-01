@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB25A7C224AB0244009C7DCF /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
+		DB25A7C324AB0248009C7DCF /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
+		DB25A7C424AB03A2009C7DCF /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB827C3420CF47140034863F /* Ticker.swift */; };
+		DB25A7C524AB03A9009C7DCF /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF7024214AA6B900390191 /* constants.swift */; };
+		DB25A7C624AB03AE009C7DCF /* TickersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AED2405FBC7001953DE /* TickersUIView.swift */; };
+		DB25A7C724AB03B4009C7DCF /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
+		DB25A7C824AB03BC009C7DCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF02405FC53001953DE /* SceneDelegate.swift */; };
+		DB25A7C924AB0427009C7DCF /* TickerRowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF5240605C2001953DE /* TickerRowUIView.swift */; };
 		DB454AEE2405FBC7001953DE /* TickersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AED2405FBC7001953DE /* TickersUIView.swift */; };
 		DB454AEF2405FBC7001953DE /* TickersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AED2405FBC7001953DE /* TickersUIView.swift */; };
 		DB454AF12405FC53001953DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF02405FC53001953DE /* SceneDelegate.swift */; };
@@ -18,7 +26,7 @@
 		DB454AF924116557001953DE /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
 		DB454AFA24116557001953DE /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
 		DB454AFC2415FB94001953DE /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
-		DB454AFD2415FB94001953DE /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
+		DB5F3010247CB84A00F8448C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5F300F247CB84A00F8448C /* SnapshotHelper.swift */; };
 		DB732DA92179889900FA0298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB827C2920CB51970034863F /* Assets.xcassets */; };
 		DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB732DAA2179941700FA0298 /* NamedColorsTests.swift */; };
 		DB827C2320CB51940034863F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB827C2220CB51940034863F /* AppDelegate.swift */; };
@@ -28,10 +36,19 @@
 		DB8E008A20E9AED200937ABB /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E008920E9AED200937ABB /* TickerTests.swift */; };
 		DBCC02272131D2C800BA8425 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBCC02262131D2C800BA8425 /* .swiftlint.yml */; };
 		DBDF7025214AA6B900390191 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF7024214AA6B900390191 /* constants.swift */; };
+		DBF352D52439B89E008EB947 /* TickersUIViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF352D42439B89E008EB947 /* TickersUIViewTest.swift */; };
+		DBF352DD2439BAB2008EB947 /* tickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF352DC2439BAB2008EB947 /* tickUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DB8E008420E9A00100937ABB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB827C1720CB51930034863F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB827C1E20CB51930034863F;
+			remoteInfo = tick;
+		};
+		DBF352DF2439BAB2008EB947 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB827C1720CB51930034863F /* Project object */;
 			proxyType = 1;
@@ -46,6 +63,8 @@
 		DB454AF5240605C2001953DE /* TickerRowUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRowUIView.swift; sourceTree = "<group>"; };
 		DB454AF824116556001953DE /* TickerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerUIView.swift; sourceTree = "<group>"; };
 		DB454AFB2415FB94001953DE /* TickerFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerFetcher.swift; sourceTree = "<group>"; };
+		DB5F300F247CB84A00F8448C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
+		DB5F3011247CBACE00F8448C /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		DB6F9CDC20F2F53A00B4ECF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DB732DAA2179941700FA0298 /* NamedColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorsTests.swift; sourceTree = "<group>"; };
 		DB827C1F20CB51930034863F /* tick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tick.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +78,10 @@
 		DB8E008920E9AED200937ABB /* TickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTests.swift; sourceTree = "<group>"; };
 		DBCC02262131D2C800BA8425 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DBDF7024214AA6B900390191 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		DBF352D42439B89E008EB947 /* TickersUIViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TickersUIViewTest.swift; path = tickTests/TickersUIViewTest.swift; sourceTree = SOURCE_ROOT; };
+		DBF352DA2439BAB2008EB947 /* tickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBF352DC2439BAB2008EB947 /* tickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tickUITests.swift; sourceTree = "<group>"; };
+		DBF352DE2439BAB2008EB947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,17 +99,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBF352D72439BAB2008EB947 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		DB827C1620CB51930034863F = {
 			isa = PBXGroup;
 			children = (
+				DB5F3011247CBACE00F8448C /* fastlane */,
+				DB5F300F247CB84A00F8448C /* SnapshotHelper.swift */,
 				DB454AFB2415FB94001953DE /* TickerFetcher.swift */,
 				DBCC02262131D2C800BA8425 /* .swiftlint.yml */,
 				DB6F9CDC20F2F53A00B4ECF3 /* README.md */,
 				DB827C2120CB51930034863F /* tick */,
 				DB8E008020E9A00100937ABB /* tickTests */,
+				DBF352DB2439BAB2008EB947 /* tickUITests */,
 				DB827C2020CB51930034863F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +129,7 @@
 			children = (
 				DB827C1F20CB51930034863F /* tick.app */,
 				DB8E007F20E9A00100937ABB /* tickTests.xctest */,
+				DBF352DA2439BAB2008EB947 /* tickUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,11 +154,21 @@
 		DB8E008020E9A00100937ABB /* tickTests */ = {
 			isa = PBXGroup;
 			children = (
+				DBF352D42439B89E008EB947 /* TickersUIViewTest.swift */,
 				DB8E008920E9AED200937ABB /* TickerTests.swift */,
 				DB8E008320E9A00100937ABB /* Info.plist */,
 				DB732DAA2179941700FA0298 /* NamedColorsTests.swift */,
 			);
 			path = tickTests;
+			sourceTree = "<group>";
+		};
+		DBF352DB2439BAB2008EB947 /* tickUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DBF352DC2439BAB2008EB947 /* tickUITests.swift */,
+				DBF352DE2439BAB2008EB947 /* Info.plist */,
+			);
+			path = tickUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,13 +210,31 @@
 			productReference = DB8E007F20E9A00100937ABB /* tickTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DBF352D92439BAB2008EB947 /* tickUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBF352E12439BAB2008EB947 /* Build configuration list for PBXNativeTarget "tickUITests" */;
+			buildPhases = (
+				DBF352D62439BAB2008EB947 /* Sources */,
+				DBF352D72439BAB2008EB947 /* Frameworks */,
+				DBF352D82439BAB2008EB947 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBF352E02439BAB2008EB947 /* PBXTargetDependency */,
+			);
+			name = tickUITests;
+			productName = tickUITests;
+			productReference = DBF352DA2439BAB2008EB947 /* tickUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		DB827C1720CB51930034863F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Martin Calvert";
 				TargetAttributes = {
@@ -188,6 +250,10 @@
 					DB8E007E20E9A00100937ABB = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1130;
+						TestTargetID = DB827C1E20CB51930034863F;
+					};
+					DBF352D92439BAB2008EB947 = {
+						CreatedOnToolsVersion = 11.4;
 						TestTargetID = DB827C1E20CB51930034863F;
 					};
 				};
@@ -207,6 +273,7 @@
 			targets = (
 				DB827C1E20CB51930034863F /* tick */,
 				DB8E007E20E9A00100937ABB /* tickTests */,
+				DBF352D92439BAB2008EB947 /* tickUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +294,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB732DA92179889900FA0298 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBF352D82439BAB2008EB947 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,13 +344,30 @@
 			files = (
 				DB454AF7240605C2001953DE /* TickerRowUIView.swift in Sources */,
 				DB454AF32405FFE0001953DE /* Ticker.swift in Sources */,
+				DBF352D52439B89E008EB947 /* TickersUIViewTest.swift in Sources */,
 				DB454AF42405FFF2001953DE /* constants.swift in Sources */,
 				DB454AF22405FC53001953DE /* SceneDelegate.swift in Sources */,
 				DB454AFA24116557001953DE /* TickerUIView.swift in Sources */,
 				DB454AEF2405FBC7001953DE /* TickersUIView.swift in Sources */,
-				DB454AFD2415FB94001953DE /* TickerFetcher.swift in Sources */,
 				DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */,
 				DB8E008A20E9AED200937ABB /* TickerTests.swift in Sources */,
+				DB25A7C324AB0248009C7DCF /* TickerFetcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBF352D62439BAB2008EB947 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB25A7C724AB03B4009C7DCF /* TickerUIView.swift in Sources */,
+				DB25A7C224AB0244009C7DCF /* TickerFetcher.swift in Sources */,
+				DB25A7C924AB0427009C7DCF /* TickerRowUIView.swift in Sources */,
+				DB25A7C424AB03A2009C7DCF /* Ticker.swift in Sources */,
+				DB25A7C624AB03AE009C7DCF /* TickersUIView.swift in Sources */,
+				DBF352DD2439BAB2008EB947 /* tickUITests.swift in Sources */,
+				DB25A7C524AB03A9009C7DCF /* constants.swift in Sources */,
+				DB5F3010247CB84A00F8448C /* SnapshotHelper.swift in Sources */,
+				DB25A7C824AB03BC009C7DCF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +378,11 @@
 			isa = PBXTargetDependency;
 			target = DB827C1E20CB51930034863F /* tick */;
 			targetProxy = DB8E008420E9A00100937ABB /* PBXContainerItemProxy */;
+		};
+		DBF352E02439BAB2008EB947 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB827C1E20CB51930034863F /* tick */;
+			targetProxy = DBF352DF2439BAB2008EB947 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -502,6 +598,49 @@
 			};
 			name = Release;
 		};
+		DBF352E22439BAB2008EB947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E33ZQZLW6Z;
+				INFOPLIST_FILE = tickUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.db94.tickUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tick;
+			};
+			name = Debug;
+		};
+		DBF352E32439BAB2008EB947 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E33ZQZLW6Z;
+				INFOPLIST_FILE = tickUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.db94.tickUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tick;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -528,6 +667,15 @@
 			buildConfigurations = (
 				DB8E008720E9A00100937ABB /* Debug */,
 				DB8E008820E9A00100937ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBF352E12439BAB2008EB947 /* Build configuration list for PBXNativeTarget "tickUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBF352E22439BAB2008EB947 /* Debug */,
+				DBF352E32439BAB2008EB947 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

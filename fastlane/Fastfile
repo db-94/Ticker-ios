@@ -1,0 +1,43 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Generate new screenshots"
+  lane :screenshots do
+    capture_screenshots(workspace: "tick.xcodeproj/project.xcworkspace", scheme: "tick")
+    frameit(path: "./fastlane/screenshots/")
+    # upload_to_app_store(skip_binary_upload: true, skip_metadata: true)
+  end
+
+  desc "Run Tests"
+  lane :ui_tests do
+    scan(
+      scheme: "tickUITests",
+      derived_data_path: "scan_derived_data" # https://github.com/fastlane/fastlane/issues/15768
+    )
+  end
+
+  desc "Run Tests"
+  lane :unit_tests do
+    scan(
+      scheme: "tickTests",
+      derived_data_path: "scan_derived_data" # https://github.com/fastlane/fastlane/issues/15768
+    )
+  end
+
+  desc "Build"
+  lane :build do |options|
+    xcodebuild(
+      workspace: "project.xcworkspace",
+      scheme: "tick",
+      configuration: "Debug",
+      clean: options[:clean],
+      build: true,
+      sdk: "iphonesimulator"
+    )
+  end
+
+  desc "Lint"
+  lane :lint do
+    swiftlint
+  end
+end

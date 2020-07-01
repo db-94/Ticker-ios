@@ -6,6 +6,7 @@
 build/
 DerivedData/
 *.DS_Store
+scan_derived_data/
 
 ## Various settings
 *.pbxuser
@@ -68,6 +69,6 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots/**/*.png
+fastlane/screenshots/*
 fastlane/test_output
 
