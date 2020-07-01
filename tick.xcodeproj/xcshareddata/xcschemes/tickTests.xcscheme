@@ -35,7 +35,7 @@
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
@@ -83,16 +83,6 @@
                BlueprintIdentifier = "DB8E007E20E9A00100937ABB"
                BuildableName = "tickTests.xctest"
                BlueprintName = "tickTests"
-               ReferencedContainer = "container:tick.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DBF352D92439BAB2008EB947"
-               BuildableName = "tickUITests.xctest"
-               BlueprintName = "tickUITests"
                ReferencedContainer = "container:tick.xcodeproj">
             </BuildableReference>
          </TestableReference>
