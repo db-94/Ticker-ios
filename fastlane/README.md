@@ -21,14 +21,14 @@ or alternatively using `brew cask install fastlane`
 fastlane ios screenshots
 ```
 Generate new screenshots
-### ios ui_test
+### ios ui_tests
 ```
-fastlane ios ui_test
+fastlane ios ui_tests
 ```
 Run Tests
-### ios unit_test
+### ios unit_tests
 ```
-fastlane ios unit_test
+fastlane ios unit_tests
 ```
 Run Tests
 ### ios build

@@ -26,7 +26,6 @@
 		DB454AF924116557001953DE /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
 		DB454AFA24116557001953DE /* TickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AF824116556001953DE /* TickerUIView.swift */; };
 		DB454AFC2415FB94001953DE /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB454AFB2415FB94001953DE /* TickerFetcher.swift */; };
-		DB5F3010247CB84A00F8448C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5F300F247CB84A00F8448C /* SnapshotHelper.swift */; };
 		DB732DA92179889900FA0298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB827C2920CB51970034863F /* Assets.xcassets */; };
 		DB732DAB2179941700FA0298 /* NamedColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB732DAA2179941700FA0298 /* NamedColorsTests.swift */; };
 		DB827C2320CB51940034863F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB827C2220CB51940034863F /* AppDelegate.swift */; };
@@ -63,7 +62,6 @@
 		DB454AF5240605C2001953DE /* TickerRowUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRowUIView.swift; sourceTree = "<group>"; };
 		DB454AF824116556001953DE /* TickerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerUIView.swift; sourceTree = "<group>"; };
 		DB454AFB2415FB94001953DE /* TickerFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerFetcher.swift; sourceTree = "<group>"; };
-		DB5F300F247CB84A00F8448C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
 		DB5F3011247CBACE00F8448C /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		DB6F9CDC20F2F53A00B4ECF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DB732DAA2179941700FA0298 /* NamedColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorsTests.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				DB5F3011247CBACE00F8448C /* fastlane */,
-				DB5F300F247CB84A00F8448C /* SnapshotHelper.swift */,
 				DB454AFB2415FB94001953DE /* TickerFetcher.swift */,
 				DBCC02262131D2C800BA8425 /* .swiftlint.yml */,
 				DB6F9CDC20F2F53A00B4ECF3 /* README.md */,
@@ -366,7 +363,6 @@
 				DB25A7C624AB03AE009C7DCF /* TickersUIView.swift in Sources */,
 				DBF352DD2439BAB2008EB947 /* tickUITests.swift in Sources */,
 				DB25A7C524AB03A9009C7DCF /* constants.swift in Sources */,
-				DB5F3010247CB84A00F8448C /* SnapshotHelper.swift in Sources */,
 				DB25A7C824AB03BC009C7DCF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
