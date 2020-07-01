@@ -1,4 +1,4 @@
-name: Unit Tests
+name: Unit & UI Tests
 
 on: pull_request
 
@@ -6,6 +6,7 @@ jobs:
   deploy:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Test
-      run: xcodebuild test -project tick.xcodeproj -scheme tickTests -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=latest'
+    - name: Unit & UI Tests
+      uses: maierj/fastlane-action@v1.4.0
+      with:
+        lane: 'scan'
