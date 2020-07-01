@@ -10,6 +10,7 @@ jobs:
       uses: maierj/fastlane-action@v1.4.0
       with:
         lane: 'unit_tests'
+        subdirectory: 'fastlane'
   ui-tests:
     runs-on: macos-latest
     steps:
@@ -17,3 +18,4 @@ jobs:
       uses: maierj/fastlane-action@v1.4.0
       with:
         lane: 'ui_tests'
+        subdirectory: 'fastlane'
